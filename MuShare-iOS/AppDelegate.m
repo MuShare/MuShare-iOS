@@ -34,14 +34,32 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [[self cdh] saveContext];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self cdh];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[self cdh] saveContext];
+}
+
+
+-(CoreDataHelper *)cdh{
+    if(DEBUG) {
+         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
+    if(!_coreDataHelper){
+        static dispatch_once_t predicate;
+        dispatch_once(&predicate, ^{
+            _coreDataHelper = [CoreDataHelper new];
+        });
+        [_coreDataHelper setupCoreData];
+    }
+    return _coreDataHelper;
 }
 
 

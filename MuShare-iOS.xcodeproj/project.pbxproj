@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1E2F7376A4084047D6462A39 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DABF2F1FD61703DF6AA0F84 /* Pods.framework */; };
+		E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */; };
+		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
+		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
+		E488B12C1CDDC36F009CA5C4 /* Mushare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */; };
+		E488B1321CDDC83E009CA5C4 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */; };
+		E488B1331CDDC83E009CA5C4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1311CDDC83E009CA5C4 /* User.m */; };
+		E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */; };
+		E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1391CDDCB42009CA5C4 /* UserDao.m */; };
+		E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B13C1CDDD02A009CA5C4 /* DaoManager.m */; };
 		E4B86B901CC897D0005DDF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B8F1CC897D0005DDF25 /* main.m */; };
 		E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B921CC897D0005DDF25 /* AppDelegate.m */; };
 		E4B86B9C1CC897D0005DDF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9A1CC897D0005DDF25 /* Main.storyboard */; };
@@ -38,6 +47,23 @@
 
 /* Begin PBXFileReference section */
 		0DABF2F1FD61703DF6AA0F84 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E488B1211CDDB488009CA5C4 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
+		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
+		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E488B1281CDDBD61009CA5C4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E488B12B1CDDC36F009CA5C4 /* Mushare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mushare.xcdatamodel; sourceTree = "<group>"; };
+		E488B12E1CDDC83E009CA5C4 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E488B1301CDDC83E009CA5C4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E488B1311CDDC83E009CA5C4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E488B1341CDDCA7E009CA5C4 /* DaoTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoTemplate.h; sourceTree = "<group>"; };
+		E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoTemplate.m; sourceTree = "<group>"; };
+		E488B1381CDDCB42009CA5C4 /* UserDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDao.h; sourceTree = "<group>"; };
+		E488B1391CDDCB42009CA5C4 /* UserDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDao.m; sourceTree = "<group>"; };
+		E488B13B1CDDD02A009CA5C4 /* DaoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoManager.h; sourceTree = "<group>"; };
+		E488B13C1CDDD02A009CA5C4 /* DaoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoManager.m; sourceTree = "<group>"; };
 		E4B86B8B1CC897D0005DDF25 /* MuShare-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MuShare-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B86B8F1CC897D0005DDF25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4B86B911CC897D0005DDF25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +128,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E488B12D1CDDC37C009CA5C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E488B12E1CDDC83E009CA5C4 /* User+CoreDataProperties.h */,
+				E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */,
+				E488B1301CDDC83E009CA5C4 /* User.h */,
+				E488B1311CDDC83E009CA5C4 /* User.m */,
+				E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E488B1371CDDCB28009CA5C4 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				E488B13B1CDDD02A009CA5C4 /* DaoManager.h */,
+				E488B13C1CDDD02A009CA5C4 /* DaoManager.m */,
+				E488B1341CDDCA7E009CA5C4 /* DaoTemplate.h */,
+				E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */,
+				E488B1381CDDCB42009CA5C4 /* UserDao.h */,
+				E488B1391CDDCB42009CA5C4 /* UserDao.m */,
+			);
+			name = Dao;
+			sourceTree = "<group>";
+		};
 		E4B86B821CC897D0005DDF25 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +178,8 @@
 		E4B86B8D1CC897D0005DDF25 /* MuShare-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E488B1371CDDCB28009CA5C4 /* Dao */,
+				E488B12D1CDDC37C009CA5C4 /* Model */,
 				E4C1BC6F1CD490E300AB3F9A /* Core */,
 				E4C1BC791CD49B7F00AB3F9A /* User */,
 				E4B86B911CC897D0005DDF25 /* AppDelegate.h */,
@@ -170,6 +223,10 @@
 		E4C1BC6F1CD490E300AB3F9A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E488B1211CDDB488009CA5C4 /* CoreDataHelper.h */,
+				E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */,
+				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
+				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -179,6 +236,8 @@
 			children = (
 				E4C1BC7A1CD49BA400AB3F9A /* RegisterViewController.h */,
 				E4C1BC7B1CD49BA400AB3F9A /* RegisterViewController.m */,
+				E488B1271CDDBD61009CA5C4 /* LoginViewController.h */,
+				E488B1281CDDBD61009CA5C4 /* LoginViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -370,7 +429,16 @@
 			files = (
 				E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */,
 				E4C1BC7C1CD49BA400AB3F9A /* RegisterViewController.m in Sources */,
+				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
+				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
+				E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */,
+				E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */,
+				E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */,
+				E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */,
 				E4B86B901CC897D0005DDF25 /* main.m in Sources */,
+				E488B1321CDDC83E009CA5C4 /* User+CoreDataProperties.m in Sources */,
+				E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */,
+				E488B12C1CDDC36F009CA5C4 /* Mushare.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +687,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E488B12B1CDDC36F009CA5C4 /* Mushare.xcdatamodel */,
+			);
+			currentVersion = E488B12B1CDDC36F009CA5C4 /* Mushare.xcdatamodel */;
+			path = Mushare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E4B86B831CC897D0005DDF25 /* Project object */;
 }

@@ -15,12 +15,14 @@
 
 @implementation RegisterViewController {
     AppDelegate *delegate;
+    AFHTTPSessionManager *manager;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     delegate=(AppDelegate *)[[UIApplication sharedApplication] delegate];
+    manager=delegate.manager;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,19 +45,33 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     NSMutableDictionary *parameters=[[NSMutableDictionary alloc] init];
-    [parameters setValue:_emailTextField.text forKey:@"email"];
-    [parameters setValue:_userIdTextField.text forKey:@"name"];
-    [parameters setValue:_nameTextField.text forKey:@"screen_name"];
+    [parameters setValue:_emailTextField.text forKey:@"mail"];
+    [parameters setValue:_telephoneTextField.text forKey:@"phone"];
+    [parameters setValue:_nameTextField.text forKey:@"name"];
     [parameters setValue:_passwordTextField.text forKey:@"password"];
-    [delegate.manager POST:@"http://test.mushare.cn/user/register"
-                parameters:parameters
-                  progress:nil
-                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                       NSLog(@"JSON: %@", responseObject);
-                   }
-                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                       NSLog(@"Error: %@", error);
-                   }];
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager POST:@"http://test.mushare.cn/api/user/account/register"
+       parameters:parameters
+         progress:nil
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                       options:NSJSONReadingAllowFragments
+                                                                         error:nil];
+              if(DEBUG) {
+                  NSLog(@"Get response from server: %@", response);
+              }
+              if([[response valueForKey:@"status"] intValue]==200) {
+                  [self dismissViewControllerAnimated:YES
+                                           completion:nil];
+              } 
+          }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              NSLog(@"error: %@", error);
+              
+          }];
+    
 }
 
 - (IBAction)login:(id)sender {
