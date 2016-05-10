@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E2F7376A4084047D6462A39 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DABF2F1FD61703DF6AA0F84 /* Pods.framework */; };
+		E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E446CFBE1CE1C5CF007FD645 /* MainViewController.m */; };
 		E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
@@ -47,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		0DABF2F1FD61703DF6AA0F84 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E446CFBD1CE1C5CF007FD645 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E446CFBE1CE1C5CF007FD645 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E488B1211CDDB488009CA5C4 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
@@ -128,6 +131,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E446CFBC1CE1C5BB007FD645 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E446CFBD1CE1C5CF007FD645 /* MainViewController.h */,
+				E446CFBE1CE1C5CF007FD645 /* MainViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		E488B12D1CDDC37C009CA5C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +190,7 @@
 		E4B86B8D1CC897D0005DDF25 /* MuShare-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E446CFBC1CE1C5BB007FD645 /* Main */,
 				E488B1371CDDCB28009CA5C4 /* Dao */,
 				E488B12D1CDDC37C009CA5C4 /* Model */,
 				E4C1BC6F1CD490E300AB3F9A /* Core */,
@@ -431,6 +444,7 @@
 				E4C1BC7C1CD49BA400AB3F9A /* RegisterViewController.m in Sources */,
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
+				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
 				E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */,
 				E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */,
 				E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */,

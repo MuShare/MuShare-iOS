@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DaoManager.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +21,14 @@
     // Override point for customization after application launch.
     self.manager=[AFHTTPSessionManager manager];
     self.manager.responseSerializer=[[AFCompoundResponseSerializer alloc] init];
+    //已有用户登录直接跳转到首页
+    DaoManager *dao=[[DaoManager alloc] init];
+    User *user=[dao.userDao getLoginedUser];
+    if(user!=nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MainViewController *mainViewController=[storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        self.window.rootViewController=mainViewController;
+    }
     return YES;
 }
 
