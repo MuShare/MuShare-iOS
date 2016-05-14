@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1E2F7376A4084047D6462A39 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DABF2F1FD61703DF6AA0F84 /* Pods.framework */; };
 		E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E446CFBE1CE1C5CF007FD645 /* MainViewController.m */; };
+		E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E455390F1CE6ECC900ECD499 /* MeTableViewController.m */; };
+		E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */; };
+		E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539161CE6FA9800ECD499 /* FriendTableViewController.m */; };
 		E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
@@ -50,6 +53,12 @@
 		0DABF2F1FD61703DF6AA0F84 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E446CFBD1CE1C5CF007FD645 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E446CFBE1CE1C5CF007FD645 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E455390E1CE6ECC900ECD499 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
+		E455390F1CE6ECC900ECD499 /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
+		E45539121CE6EFA700ECD499 /* AddFriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendTableViewController.h; sourceTree = "<group>"; };
+		E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendTableViewController.m; sourceTree = "<group>"; };
+		E45539151CE6FA9800ECD499 /* FriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewController.h; sourceTree = "<group>"; };
+		E45539161CE6FA9800ECD499 /* FriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewController.m; sourceTree = "<group>"; };
 		E488B1211CDDB488009CA5C4 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
@@ -140,6 +149,17 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		E45539111CE6EF9000ECD499 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				E45539121CE6EFA700ECD499 /* AddFriendTableViewController.h */,
+				E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */,
+				E45539151CE6FA9800ECD499 /* FriendTableViewController.h */,
+				E45539161CE6FA9800ECD499 /* FriendTableViewController.m */,
+			);
+			name = Friend;
+			sourceTree = "<group>";
+		};
 		E488B12D1CDDC37C009CA5C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +210,7 @@
 		E4B86B8D1CC897D0005DDF25 /* MuShare-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E45539111CE6EF9000ECD499 /* Friend */,
 				E446CFBC1CE1C5BB007FD645 /* Main */,
 				E488B1371CDDCB28009CA5C4 /* Dao */,
 				E488B12D1CDDC37C009CA5C4 /* Model */,
@@ -251,6 +272,8 @@
 				E4C1BC7B1CD49BA400AB3F9A /* RegisterViewController.m */,
 				E488B1271CDDBD61009CA5C4 /* LoginViewController.h */,
 				E488B1281CDDBD61009CA5C4 /* LoginViewController.m */,
+				E455390E1CE6ECC900ECD499 /* MeTableViewController.h */,
+				E455390F1CE6ECC900ECD499 /* MeTableViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -445,8 +468,11 @@
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
+				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
+				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
 				E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */,
 				E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */,
+				E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */,
 				E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */,
 				E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */,
 				E4B86B901CC897D0005DDF25 /* main.m in Sources */,

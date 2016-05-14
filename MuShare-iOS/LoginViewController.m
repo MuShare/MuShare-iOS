@@ -28,21 +28,18 @@
     dao=[[DaoManager alloc] init];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    if(DEBUG==1)
+        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    [super viewDidAppear:animated];
+    //已有用户登录直接跳转到首页
+    User *user=[dao.userDao getLoginedUser];
+    if(user!=nil) {
+        [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+#pragma mark - Action
 - (IBAction)loginSubmit:(id)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -50,9 +47,8 @@
     NSMutableDictionary *parameters=[[NSMutableDictionary alloc] init];
     [parameters setValue:_emailTextField.text forKey:@"mail"];
     [parameters setValue:_passwordTextField.text forKey:@"password"];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager POST:@"http://test.mushare.cn/api/user/account/login"
+    
+    [manager POST:[InternetHelper createUrl:@"api/user/account/login"]
        parameters:parameters
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -61,7 +57,7 @@
                                                                        options:NSJSONReadingAllowFragments
                                                                          error:nil];
               if(DEBUG) {
-                  NSLog(@"%@", response);
+                  NSLog(@"Get Message from server: %@", response);
               }
               NSDictionary *body=[response valueForKey:@"body"];
               User *user=(User *)[dao.userDao getByMail:[body valueForKey:@"mail"]];
@@ -75,8 +71,9 @@
                                                           andBirth:nil
                                                          andAvatar:[body valueForKey:@"avatar"]
                                                           andToken:[body valueForKey:@"token"]
-                                                            andSid:[NSNumber numberWithInt:[[body valueForKey:@"sid"] intValue]]];
+                                                            andSid:[NSNumber numberWithInt:[[body valueForKey:@"id"] intValue]]];
                   [dao.userDao setUserLogin:YES withUid:uid];
+                  [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
               } else {
                   user.mail=[body valueForKey:@"mail"];
                   user.phone=[body valueForKey:@"phone"];
@@ -92,7 +89,10 @@
               }
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              NSLog(@"error: %@", error);
+              if(DEBUG) {
+                  NSLog(@"Error: %@", error);
+              }
+
           }];
 
 }

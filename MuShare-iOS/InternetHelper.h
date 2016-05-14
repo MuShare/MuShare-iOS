@@ -16,4 +16,6 @@
 //创建访问服务器的url
 + (NSString *)createUrl:(NSString *)relativePosition;
 
++ (NSDictionary *)getResponse:(id  _Nullable )responseObject;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "AppDelegate.h"
+#import "InternetHelper.h"
 
 @interface RegisterViewController ()
 
@@ -50,9 +51,7 @@
     [parameters setValue:_nameTextField.text forKey:@"name"];
     [parameters setValue:_passwordTextField.text forKey:@"password"];
     
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager POST:@"http://test.mushare.cn/api/user/account/register"
+    [manager POST:[InternetHelper createUrl:@"api/user/account/register"]
        parameters:parameters
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

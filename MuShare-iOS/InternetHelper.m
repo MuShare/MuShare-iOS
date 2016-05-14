@@ -8,8 +8,7 @@
 
 #import "InternetHelper.h"
 
-
-#define Domain @"easy.fczm.pw"
+#define Domain @"test.mushare.cn"
 
 @implementation InternetHelper
 
@@ -30,4 +29,14 @@
     return url;
 }
 
++ (NSDictionary *)getResponse:(id)responseObject {
+    NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                             options:NSJSONReadingAllowFragments
+                                                               error:nil];
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+        NSLog(@"Get Message from server: %@", response);
+    }
+    return response;
+}
 @end
