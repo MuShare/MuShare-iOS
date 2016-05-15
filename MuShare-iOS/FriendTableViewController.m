@@ -25,11 +25,8 @@
     manager=[InternetHelper getSessionManager];
     dao=[[DaoManager alloc] init];
     loginedUser=[dao.userDao getLoginedUser];
-    [manager GET:[InternetHelper createUrl:@"api/user/friend/request"]
-      parameters:@{
-                   @"id": loginedUser.sid,
-                   @"token": loginedUser.token
-                   }
+    [manager GET:[InternetHelper createUrl:[NSString stringWithFormat:@"api/user/friend/request?id=%@&token=%@", loginedUser.sid, loginedUser.token]]
+      parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              NSDictionary *response=[InternetHelper getResponse:responseObject];
@@ -48,11 +45,6 @@
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
