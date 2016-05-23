@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NaT-19-hCR">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -259,20 +258,26 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendRequestIdentifier" id="m30-sx-vUJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendRequestIdentifier" id="m30-sx-vUJ">
                                 <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m30-sx-vUJ" id="wdi-Vr-3AH">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knx-aA-3m0">
                                             <rect key="frame" x="8" y="4" width="36" height="36"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0F-Og-4gH">
-                                            <rect key="frame" x="52" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0F-Og-4gH">
+                                            <rect key="frame" x="52" y="4" width="260" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-H3-eh5">
+                                            <rect key="frame" x="52" y="25" width="260" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -286,6 +291,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Friends" id="l7f-h9-ZA4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="FbO-oW-oWZ">
+                            <connections>
+                                <action selector="refreshFriendList:" destination="EdV-hw-nGz" id="A0D-Lb-d1v"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fcI-wF-bbe">
                             <connections>
                                 <segue destination="I7I-Bb-9Id" kind="push" id="sqc-i0-n6A"/>
@@ -295,6 +305,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="SL2-ce-5ld" id="xrm-Ti-pyv"/>
+                        <segue destination="zRQ-ex-ksY" kind="push" identifier="friendRequestSegue" id="Ypf-Ei-gzt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaT-hm-4UC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,6 +320,69 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1227" y="1722"/>
+        </scene>
+        <!--Friend Request-->
+        <scene sceneID="eE0-NC-1v8">
+            <objects>
+                <viewController id="zRQ-ex-ksY" customClass="FriendRequestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wj8-s2-Cgw"/>
+                        <viewControllerLayoutGuide type="bottom" id="tFt-Qq-JbR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qv2-i4-MWc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7O7-h9-tOf">
+                                <rect key="frame" x="10" y="72" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-Ar-gJf">
+                                <rect key="frame" x="118" y="72" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAK-1t-FFg">
+                                <rect key="frame" x="118" y="130" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFr-J9-JoG">
+                                <rect key="frame" x="20" y="486" width="280" height="30"/>
+                                <state key="normal" title="Agree Friend Request"/>
+                                <connections>
+                                    <action selector="agreeFriendRequest:" destination="zRQ-ex-ksY" eventType="touchUpInside" id="Wxk-cl-x4u"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhD-8V-DZI">
+                                <rect key="frame" x="118" y="101" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="oFr-J9-JoG" secondAttribute="leading" id="78p-zf-0Dl"/>
+                            <constraint firstItem="tFt-Qq-JbR" firstAttribute="top" secondItem="oFr-J9-JoG" secondAttribute="bottom" constant="8" id="Etk-su-1en"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gAK-1t-FFg" secondAttribute="trailing" id="NAR-wS-ye4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lZg-Ar-gJf" secondAttribute="trailing" id="jgU-8Q-O4V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZhD-8V-DZI" secondAttribute="trailing" id="qhq-JA-O2o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oFr-J9-JoG" secondAttribute="trailing" id="sTs-NR-hsq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Friend Request" id="a07-74-ruc"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="7O7-h9-tOf" id="d0o-S0-ZMS"/>
+                        <outlet property="mailLabel" destination="ZhD-8V-DZI" id="uGw-BD-wn5"/>
+                        <outlet property="nameLabel" destination="lZg-Ar-gJf" id="yLG-po-Rnt"/>
+                        <outlet property="phoneLabel" destination="gAK-1t-FFg" id="AHO-pM-90f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lkg-xZ-ygf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="2444"/>
         </scene>
         <!--Add Friend-->
         <scene sceneID="Jbe-pP-yIg">

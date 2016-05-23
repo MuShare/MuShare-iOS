@@ -22,9 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    manager=[InternetHelper getSessionManager];
     dao=[[DaoManager alloc] init];
     loginedUser=[dao.userDao getLoginedUser];
+    manager=[InternetHelper getSessionManager: loginedUser.token];
 }
 
 
@@ -33,13 +33,10 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    NSMutableDictionary *parameters=[[NSMutableDictionary alloc] init];
-    [parameters setValue:loginedUser.sid forKey:@"fromId"];
-    [parameters setValue:[NSNumber numberWithInt:_friendIdTextField.text.intValue] forKey:@"toId"];
-    [parameters setValue:loginedUser.token forKey:@"token"];
-    NSLog(@"%@", parameters);
     [manager POST:[InternetHelper createUrl:@"api/user/friend/request"]
-       parameters:parameters
+       parameters:@{
+                    @"friendId": [NSNumber numberWithInt:_friendIdTextField.text.intValue]
+                    }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
               NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject

@@ -21,6 +21,7 @@
 		E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */; };
 		E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1391CDDCB42009CA5C4 /* UserDao.m */; };
 		E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B13C1CDDD02A009CA5C4 /* DaoManager.m */; };
+		E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */; };
 		E4B86B901CC897D0005DDF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B8F1CC897D0005DDF25 /* main.m */; };
 		E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B921CC897D0005DDF25 /* AppDelegate.m */; };
 		E4B86B9C1CC897D0005DDF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9A1CC897D0005DDF25 /* Main.storyboard */; };
@@ -76,6 +77,8 @@
 		E488B1391CDDCB42009CA5C4 /* UserDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDao.m; sourceTree = "<group>"; };
 		E488B13B1CDDD02A009CA5C4 /* DaoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoManager.h; sourceTree = "<group>"; };
 		E488B13C1CDDD02A009CA5C4 /* DaoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoManager.m; sourceTree = "<group>"; };
+		E495C17B1CF037CF0010D0CC /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
+		E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
 		E4B86B8B1CC897D0005DDF25 /* MuShare-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MuShare-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B86B8F1CC897D0005DDF25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4B86B911CC897D0005DDF25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */,
 				E45539151CE6FA9800ECD499 /* FriendTableViewController.h */,
 				E45539161CE6FA9800ECD499 /* FriendTableViewController.m */,
+				E495C17B1CF037CF0010D0CC /* FriendRequestViewController.h */,
+				E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */,
 			);
 			name = Friend;
 			sourceTree = "<group>";
@@ -348,7 +353,7 @@
 				TargetAttributes = {
 					E4B86B8A1CC897D0005DDF25 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 48X958YKXE;
+						DevelopmentTeam = 5EE3Z46PC9;
 					};
 					E4B86BA61CC897D0005DDF25 = {
 						CreatedOnToolsVersion = 7.3;
@@ -467,6 +472,7 @@
 				E4C1BC7C1CD49BA400AB3F9A /* RegisterViewController.m in Sources */,
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
+				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
 				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
@@ -622,11 +628,14 @@
 			baseConfigurationReference = EA5EC9F7DD476308D303B5C2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MuShare-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.ut.cs.MuShare-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.ut.MuShare-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -635,11 +644,14 @@
 			baseConfigurationReference = EC9D01923BC1E766110F0C4A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MuShare-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.ut.cs.MuShare-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.ut.MuShare-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

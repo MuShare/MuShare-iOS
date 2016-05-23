@@ -24,7 +24,7 @@
     if(DEBUG==1)
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     [super viewDidLoad];
-    manager=[InternetHelper getSessionManager];
+    manager=[InternetHelper getSessionManager: nil];
     dao=[[DaoManager alloc] init];
 }
 

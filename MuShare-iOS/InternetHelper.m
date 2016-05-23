@@ -12,11 +12,14 @@
 
 @implementation InternetHelper
 
-+ (AFHTTPSessionManager *)getSessionManager {
++ (AFHTTPSessionManager *)getSessionManager:(NSString *)token {
     if(DEBUG==1) {
          NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
+    if(token!=nil) {
+        [delegate.manager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    }
     return delegate.manager;
 }
 

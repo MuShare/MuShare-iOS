@@ -18,19 +18,92 @@
     AFHTTPSessionManager *manager;
     DaoManager *dao;
     User *loginedUser;
+    NSMutableArray *requestFriends;
+    NSObject *selectedRequestFriend;
 }
 
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
-    manager=[InternetHelper getSessionManager];
     dao=[[DaoManager alloc] init];
     loginedUser=[dao.userDao getLoginedUser];
-    [manager GET:[InternetHelper createUrl:[NSString stringWithFormat:@"api/user/friend/request?id=%@&token=%@", loginedUser.sid, loginedUser.token]]
+    manager=[InternetHelper getSessionManager: loginedUser.token];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [super viewDidAppear:animated];
+    [self loadRequestFriend];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return requestFriends.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"friendRequestIdentifier"
+                                                          forIndexPath:indexPath];
+    UILabel *nameLabel=(UILabel *)[cell viewWithTag:1];
+    UILabel *mailLabel=(UILabel *)[cell viewWithTag:2];
+    NSObject *requestFriend=[requestFriends objectAtIndex:indexPath.row];
+    nameLabel.text=[requestFriend valueForKey:@"name"];
+    mailLabel.text=[requestFriend valueForKey:@"mail"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    selectedRequestFriend=[requestFriends objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"friendRequestSegue" sender:self];
+}
+
+#pragma mark - Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if([segue.identifier isEqualToString:@"friendRequestSegue"]) {
+        UIViewController *controller=[segue destinationViewController];
+        [controller setValue:selectedRequestFriend forKey:@"requestFriend"];
+    }
+}
+
+#pragma mark - Action
+- (IBAction)refreshFriendList:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [self loadRequestFriend];
+}
+
+- (void)loadRequestFriend {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:[InternetHelper createUrl:[NSString stringWithFormat:@"api/user/friend/request"]]
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              NSDictionary *response=[InternetHelper getResponse:responseObject];
-             
+             if([[response valueForKey:@"status"] intValue]==200) {
+                 requestFriends=[response valueForKey:@"body"];
+             }
+             [self.tableView reloadData];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {
@@ -39,70 +112,5 @@
          }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

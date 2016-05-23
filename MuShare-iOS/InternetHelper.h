@@ -11,7 +11,7 @@
 
 @interface InternetHelper : NSObject
 
-+ (AFHTTPSessionManager *)getSessionManager;
++ (AFHTTPSessionManager *)getSessionManager:(NSString *)token;
 
 //创建访问服务器的url
 + (NSString *)createUrl:(NSString *)relativePosition;
