@@ -35,6 +35,7 @@
     //已有用户登录直接跳转到首页
     User *user=[dao.userDao getLoginedUser];
     if(user!=nil) {
+        [InternetHelper getSessionManager:user.token];
         [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
     }
 }

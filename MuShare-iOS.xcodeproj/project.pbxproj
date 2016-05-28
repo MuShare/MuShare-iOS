@@ -21,7 +21,13 @@
 		E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */; };
 		E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1391CDDCB42009CA5C4 /* UserDao.m */; };
 		E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B13C1CDDD02A009CA5C4 /* DaoManager.m */; };
+		E488ECD11CF9750100253CF2 /* SheetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */; };
+		E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488ECD31CF9751800253CF2 /* AddSheetViewController.m */; };
 		E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */; };
+		E4AC3E1E1CF961070052AC6F /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */; };
+		E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E1D1CF961070052AC6F /* Friend.m */; };
+		E4AC3E221CF961400052AC6F /* FriendDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E211CF961400052AC6F /* FriendDao.m */; };
+		E4AC3E251CF9653A0052AC6F /* FriendRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E241CF9653A0052AC6F /* FriendRequestTableViewController.m */; };
 		E4B86B901CC897D0005DDF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B8F1CC897D0005DDF25 /* main.m */; };
 		E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B921CC897D0005DDF25 /* AppDelegate.m */; };
 		E4B86B9C1CC897D0005DDF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9A1CC897D0005DDF25 /* Main.storyboard */; };
@@ -77,8 +83,20 @@
 		E488B1391CDDCB42009CA5C4 /* UserDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDao.m; sourceTree = "<group>"; };
 		E488B13B1CDDD02A009CA5C4 /* DaoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoManager.h; sourceTree = "<group>"; };
 		E488B13C1CDDD02A009CA5C4 /* DaoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoManager.m; sourceTree = "<group>"; };
+		E488ECCF1CF9750100253CF2 /* SheetsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetsTableViewController.h; sourceTree = "<group>"; };
+		E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetsTableViewController.m; sourceTree = "<group>"; };
+		E488ECD21CF9751800253CF2 /* AddSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSheetViewController.h; sourceTree = "<group>"; };
+		E488ECD31CF9751800253CF2 /* AddSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSheetViewController.m; sourceTree = "<group>"; };
 		E495C17B1CF037CF0010D0CC /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
 		E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
+		E4AC3E1A1CF961070052AC6F /* Friend+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friend+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E4AC3E1C1CF961070052AC6F /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		E4AC3E1D1CF961070052AC6F /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		E4AC3E201CF961400052AC6F /* FriendDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDao.h; sourceTree = "<group>"; };
+		E4AC3E211CF961400052AC6F /* FriendDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDao.m; sourceTree = "<group>"; };
+		E4AC3E231CF9653A0052AC6F /* FriendRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestTableViewController.h; sourceTree = "<group>"; };
+		E4AC3E241CF9653A0052AC6F /* FriendRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestTableViewController.m; sourceTree = "<group>"; };
 		E4B86B8B1CC897D0005DDF25 /* MuShare-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MuShare-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B86B8F1CC897D0005DDF25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4B86B911CC897D0005DDF25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,10 +175,12 @@
 			children = (
 				E45539121CE6EFA700ECD499 /* AddFriendTableViewController.h */,
 				E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */,
-				E45539151CE6FA9800ECD499 /* FriendTableViewController.h */,
-				E45539161CE6FA9800ECD499 /* FriendTableViewController.m */,
+				E4AC3E231CF9653A0052AC6F /* FriendRequestTableViewController.h */,
+				E4AC3E241CF9653A0052AC6F /* FriendRequestTableViewController.m */,
 				E495C17B1CF037CF0010D0CC /* FriendRequestViewController.h */,
 				E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */,
+				E45539151CE6FA9800ECD499 /* FriendTableViewController.h */,
+				E45539161CE6FA9800ECD499 /* FriendTableViewController.m */,
 			);
 			name = Friend;
 			sourceTree = "<group>";
@@ -168,6 +188,10 @@
 		E488B12D1CDDC37C009CA5C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E4AC3E1A1CF961070052AC6F /* Friend+CoreDataProperties.h */,
+				E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */,
+				E4AC3E1C1CF961070052AC6F /* Friend.h */,
+				E4AC3E1D1CF961070052AC6F /* Friend.m */,
 				E488B12E1CDDC83E009CA5C4 /* User+CoreDataProperties.h */,
 				E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */,
 				E488B1301CDDC83E009CA5C4 /* User.h */,
@@ -186,8 +210,21 @@
 				E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */,
 				E488B1381CDDCB42009CA5C4 /* UserDao.h */,
 				E488B1391CDDCB42009CA5C4 /* UserDao.m */,
+				E4AC3E201CF961400052AC6F /* FriendDao.h */,
+				E4AC3E211CF961400052AC6F /* FriendDao.m */,
 			);
 			name = Dao;
+			sourceTree = "<group>";
+		};
+		E488ECCE1CF974EF00253CF2 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				E488ECCF1CF9750100253CF2 /* SheetsTableViewController.h */,
+				E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */,
+				E488ECD21CF9751800253CF2 /* AddSheetViewController.h */,
+				E488ECD31CF9751800253CF2 /* AddSheetViewController.m */,
+			);
+			name = Sheet;
 			sourceTree = "<group>";
 		};
 		E4B86B821CC897D0005DDF25 = {
@@ -215,6 +252,7 @@
 		E4B86B8D1CC897D0005DDF25 /* MuShare-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E488ECCE1CF974EF00253CF2 /* Sheet */,
 				E45539111CE6EF9000ECD499 /* Friend */,
 				E446CFBC1CE1C5BB007FD645 /* Main */,
 				E488B1371CDDCB28009CA5C4 /* Dao */,
@@ -469,7 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */,
+				E488ECD11CF9750100253CF2 /* SheetsTableViewController.m in Sources */,
 				E4C1BC7C1CD49BA400AB3F9A /* RegisterViewController.m in Sources */,
+				E4AC3E221CF961400052AC6F /* FriendDao.m in Sources */,
+				E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */,
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
 				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
@@ -477,6 +518,7 @@
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
 				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
 				E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */,
+				E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */,
 				E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */,
 				E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */,
 				E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */,
@@ -484,7 +526,9 @@
 				E4B86B901CC897D0005DDF25 /* main.m in Sources */,
 				E488B1321CDDC83E009CA5C4 /* User+CoreDataProperties.m in Sources */,
 				E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */,
+				E4AC3E251CF9653A0052AC6F /* FriendRequestTableViewController.m in Sources */,
 				E488B12C1CDDC36F009CA5C4 /* Mushare.xcdatamodeld in Sources */,
+				E4AC3E1E1CF961070052AC6F /* Friend+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

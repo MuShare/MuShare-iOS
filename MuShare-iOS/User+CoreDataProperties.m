@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  MuShare-iOS
 //
-//  Created by 李大爷的电脑 on 5/7/16.
+//  Created by 李大爷的电脑 on 5/28/16.
 //  Copyright © 2016 limeng. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,16 +13,17 @@
 
 @implementation User (CoreDataProperties)
 
-@dynamic sid;
+@dynamic avatar;
+@dynamic birth;
+@dynamic describe;
+@dynamic gender;
+@dynamic login;
 @dynamic mail;
+@dynamic name;
 @dynamic phone;
 @dynamic screenName;
-@dynamic gender;
-@dynamic describe;
-@dynamic birth;
-@dynamic avatar;
+@dynamic sid;
 @dynamic token;
-@dynamic login;
-@dynamic name;
+@dynamic friends;
 
 @end

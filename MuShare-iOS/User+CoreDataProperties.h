@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  MuShare-iOS
 //
-//  Created by 李大爷的电脑 on 5/7/16.
+//  Created by 李大爷的电脑 on 5/28/16.
 //  Copyright © 2016 limeng. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,17 +15,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *sid;
+@property (nullable, nonatomic, retain) NSString *avatar;
+@property (nullable, nonatomic, retain) NSDate *birth;
+@property (nullable, nonatomic, retain) NSString *describe;
+@property (nullable, nonatomic, retain) NSNumber *gender;
+@property (nullable, nonatomic, retain) NSNumber *login;
 @property (nullable, nonatomic, retain) NSString *mail;
+@property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *phone;
 @property (nullable, nonatomic, retain) NSString *screenName;
-@property (nullable, nonatomic, retain) NSNumber *gender;
-@property (nullable, nonatomic, retain) NSString *describe;
-@property (nullable, nonatomic, retain) NSDate *birth;
-@property (nullable, nonatomic, retain) NSString *avatar;
+@property (nullable, nonatomic, retain) NSNumber *sid;
 @property (nullable, nonatomic, retain) NSString *token;
-@property (nullable, nonatomic, retain) NSNumber *login;
-@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *friends;
+
+@end
+
+@interface User (CoreDataGeneratedAccessors)
+
+- (void)addFriendsObject:(NSManagedObject *)value;
+- (void)removeFriendsObject:(NSManagedObject *)value;
+- (void)addFriends:(NSSet<NSManagedObject *> *)values;
+- (void)removeFriends:(NSSet<NSManagedObject *> *)values;
 
 @end
 

@@ -1,24 +1,25 @@
 //
-//  FriendTableViewController.m
+//  FriendRequestTableViewController.m
 //  MuShare-iOS
 //
-//  Created by 李大爷的电脑 on 5/14/16.
+//  Created by 李大爷的电脑 on 5/28/16.
 //  Copyright © 2016 limeng. All rights reserved.
 //
 
-#import "FriendTableViewController.h"
+#import "FriendRequestTableViewController.h"
 #import "InternetHelper.h"
 #import "DaoManager.h"
 
-@interface FriendTableViewController ()
+@interface FriendRequestTableViewController ()
 
 @end
 
-@implementation FriendTableViewController {
+@implementation FriendRequestTableViewController {
     AFHTTPSessionManager *manager;
     DaoManager *dao;
     User *loginedUser;
-    NSMutableArray *myFriends;
+    NSMutableArray *requestFriends;
+    NSObject *selectedRequestFriend;
 }
 
 - (void)viewDidLoad {
@@ -29,15 +30,15 @@
     dao=[[DaoManager alloc] init];
     loginedUser=[dao.userDao getLoginedUser];
     manager=[InternetHelper getSessionManager: loginedUser.token];
-    
 }
+
 
 - (void)viewDidAppear:(BOOL)animated {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidAppear:animated];
-    [self loadFriend];
+    [self loadRequestFriend];
 }
 
 #pragma mark - Table view data source
@@ -46,20 +47,20 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    return myFriends.count;
+    return requestFriends.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"friendIdentifier"
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"friendRequestIdentifier"
                                                           forIndexPath:indexPath];
     UILabel *nameLabel=(UILabel *)[cell viewWithTag:1];
     UILabel *mailLabel=(UILabel *)[cell viewWithTag:2];
-    NSObject *friend=[myFriends objectAtIndex:indexPath.row];
-    nameLabel.text=[friend valueForKey:@"name"];
-    mailLabel.text=[friend valueForKey:@"mail"];
+    NSObject *requestFriend=[requestFriends objectAtIndex:indexPath.row];
+    nameLabel.text=[requestFriend valueForKey:@"name"];
+    mailLabel.text=[requestFriend valueForKey:@"mail"];
     return cell;
 }
 
@@ -67,58 +68,43 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
+    selectedRequestFriend=[requestFriends objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"friendRequestSegue" sender:self];
 }
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    if(editingStyle==UITableViewCellEditingStyleDelete) {
-
-        [manager DELETE:[InternetHelper createUrl:@"api/user/friend/delete"]
-             parameters:@{@"friendId": [[myFriends objectAtIndex:indexPath.row] valueForKey:@"id"]}
-                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                    NSDictionary *response=[InternetHelper getResponse:responseObject];
-                    if([[response valueForKey:@"status"] intValue]==200) {
-                        [myFriends removeObjectAtIndex:indexPath.row];
-                        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                                         withRowAnimation:UITableViewRowAnimationAutomatic];
-                    }
-                }
-                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    if(DEBUG) {
-                        NSLog(@"Server Error: %@", error);
-                    }
-                }];
-            }
-}
-
 
 #pragma mark - Navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
+    if([segue.identifier isEqualToString:@"friendRequestSegue"]) {
+        UIViewController *controller=[segue destinationViewController];
+        [controller setValue:selectedRequestFriend forKey:@"requestFriend"];
+    }
 }
 
-#pragma mark - Action
 
-- (void)loadFriend {
+#pragma mark - Action
+- (IBAction)refreshFriendList:(id)sender {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
-    [manager GET:[InternetHelper createUrl:@"api/user/friend/list"]
+    [self loadRequestFriend];
+}
+
+- (void)loadRequestFriend {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:[InternetHelper createUrl:[NSString stringWithFormat:@"api/user/friend/request"]]
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              NSDictionary *response=[InternetHelper getResponse:responseObject];
              if([[response valueForKey:@"status"] intValue]==200) {
-                 myFriends=[response valueForKey:@"body"];
-                 [self.tableView reloadData];
+                 requestFriends=[response valueForKey:@"body"];
              }
+             [self.tableView reloadData];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              if(DEBUG) {
@@ -126,6 +112,4 @@
              }
          }];
 }
-
-
 @end

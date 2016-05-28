@@ -35,9 +35,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [manager PUT:[InternetHelper createUrl:@"api/user/friend/request"]
-      parameters:@{
-                   @"friendId": [_requestFriend valueForKey:@"id"]
-                   }
+      parameters:@{@"friendId": [_requestFriend valueForKey:@"id"]}
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              NSDictionary *response=[InternetHelper getResponse:responseObject];
              if([[response valueForKey:@"status"] intValue]==200) {

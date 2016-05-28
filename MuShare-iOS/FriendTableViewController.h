@@ -10,6 +10,4 @@
 
 @interface FriendTableViewController : UITableViewController
 
-- (IBAction)refreshFriendList:(id)sender;
-
 @end
