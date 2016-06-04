@@ -7,21 +7,24 @@
 //
 
 #import "SheetsTableViewController.h"
+#import "InternetHelper.h"
+#import "DaoManager.h"
 
 @interface SheetsTableViewController ()
 
 @end
 
-@implementation SheetsTableViewController
+@implementation SheetsTableViewController {
+    DaoManager *dao;
+    AFHTTPSessionManager *manager;
+    User *loginedUser;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    dao=[[DaoManager alloc] init];
+    manager=[InternetHelper getSessionManager:nil];
+    loginedUser=[dao.userDao getLoginedUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,5 +97,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Service
+- (void) loadSheets {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [manager GET:[InternetHelper createUrl:[NSString stringWithFormat:@"api/music/sheet/list?ToID=%@", loginedUser.sid]]
+      parameters:nil
+        progress:nil
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             
+         }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             
+         }];
+}
 
 @end

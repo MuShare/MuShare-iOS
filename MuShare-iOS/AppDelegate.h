@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking/AFNetworking.h>
-#import "CoreDataHelper.h"
 
 @interface AppDelegate: UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic,strong,readonly) CoreDataHelper *coreDataHelper;
-@property (nonatomic,strong) AFHTTPSessionManager *manager;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) AFHTTPSessionManager *manager;
 
-- (CoreDataHelper *)cdh;
 @end
 

@@ -85,7 +85,7 @@
                   user.birth=nil;
                   user.avatar=[body valueForKey:@"avatar"];
                   user.token=[body valueForKey:@"token"];
-                  [dao.cdh saveContext];
+                  [dao saveContext];
                   [dao.userDao setUserLogin:YES withUid:user.objectID];
               }
           }

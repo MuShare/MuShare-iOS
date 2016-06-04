@@ -12,10 +12,11 @@
 
 @interface DaoManager : NSObject
 
+@property (nonatomic, readonly) NSManagedObjectContext *context;
+
 @property (strong,nonatomic) UserDao *userDao;
 
-@property (strong,nonatomic) CoreDataHelper *cdh;
-
 -(NSManagedObject *)getObjectById:(NSManagedObjectID *)objectID;
+- (void)saveContext;
 
 @end

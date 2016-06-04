@@ -15,11 +15,11 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     Friend *friend=[NSEntityDescription insertNewObjectForEntityForName:FriendEntityName
-                                                 inManagedObjectContext:self.cdh.context];
+                                                 inManagedObjectContext:self.context];
     friend.user=me;
     friend.friend=friendUser;
     friend.createAt=[[NSDate alloc] init];
-    [self.cdh saveContext];
+    [self saveContext];
     return friend.objectID;
 }
 

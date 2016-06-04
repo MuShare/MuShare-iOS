@@ -12,7 +12,6 @@
 		E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E455390F1CE6ECC900ECD499 /* MeTableViewController.m */; };
 		E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */; };
 		E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539161CE6FA9800ECD499 /* FriendTableViewController.m */; };
-		E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
 		E488B12C1CDDC36F009CA5C4 /* Mushare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */; };
@@ -66,8 +65,6 @@
 		E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendTableViewController.m; sourceTree = "<group>"; };
 		E45539151CE6FA9800ECD499 /* FriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewController.h; sourceTree = "<group>"; };
 		E45539161CE6FA9800ECD499 /* FriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewController.m; sourceTree = "<group>"; };
-		E488B1211CDDB488009CA5C4 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
-		E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
 		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
 		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -300,8 +297,6 @@
 		E4C1BC6F1CD490E300AB3F9A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E488B1211CDDB488009CA5C4 /* CoreDataHelper.h */,
-				E488B1221CDDB488009CA5C4 /* CoreDataHelper.m */,
 				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
 				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
 			);
@@ -517,7 +512,6 @@
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
 				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
-				E488B1231CDDB488009CA5C4 /* CoreDataHelper.m in Sources */,
 				E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */,
 				E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */,
 				E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */,

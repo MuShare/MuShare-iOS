@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CoreDataHelper.h"
+#import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 
 #define DAO_DEBUG 0
 
-@interface DaoTemplate : NSManagedObject
+@interface DaoTemplate : NSObject
 
-@property (nonatomic,readonly) AppDelegate *delegate;
-@property (nonatomic,readonly) CoreDataHelper *cdh;
+@property (nonatomic,readonly) NSManagedObjectContext *context;
+
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context;
+- (void)saveContext;
 
 //通过谓词和实体名称查询一个托管对象
 -(NSManagedObject *)getByPredicate:(NSPredicate *)predicate

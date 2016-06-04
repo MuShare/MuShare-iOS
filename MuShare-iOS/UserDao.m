@@ -24,7 +24,7 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     User *user=[NSEntityDescription insertNewObjectForEntityForName:UserEntityName
-                                             inManagedObjectContext:self.cdh.context];
+                                             inManagedObjectContext:self.context];
     user.mail=mail;
     user.phone=phone;
     user.screenName=screenName;
@@ -35,7 +35,7 @@
     user.avatar=avatar;
     user.token=token;
     user.sid=sid;
-    [self.cdh saveContext];
+    [self saveContext];
     return user.objectID;
 }
 
@@ -61,13 +61,13 @@
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
     NSFetchRequest *request=[[NSFetchRequest alloc] initWithEntityName:UserEntityName];
-    NSArray *allUser=[self.cdh.context executeFetchRequest:request error:nil];
+    NSArray *allUser=[self.context executeFetchRequest:request error:nil];
     for(User *user in allUser) {
         user.login=[NSNumber numberWithBool:NO];
     }
-    User *user=(User *)[self.cdh.context existingObjectWithID:uid error:nil];
+    User *user=(User *)[self.context existingObjectWithID:uid error:nil];
     user.login=[NSNumber numberWithBool:YES];
-    [self.cdh saveContext];
+    [self saveContext];
 }
 
 @end

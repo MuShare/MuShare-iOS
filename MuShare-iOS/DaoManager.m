@@ -11,15 +11,38 @@
 @implementation DaoManager
 
 -(id)init {
-    if(DEBUG==1)
+    if(DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
     self=[super init];
-    self.userDao=[[UserDao alloc] init];
-    self.cdh=[(AppDelegate *)[[UIApplication sharedApplication] delegate] cdh];
+    if(self) {
+        _context=[(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        _userDao=[[UserDao alloc] initWithManagedObjectContext:_context];
+    }
     return self;
 }
 
 -(NSManagedObject *)getObjectById:(NSManagedObjectID *)objectID {
-    return [self.cdh.context existingObjectWithID:objectID error:nil];
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
+    return [_context existingObjectWithID:objectID error:nil];
 }
+
+- (void)saveContext{
+    if(DEBUG==1)
+        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    if ([_context hasChanges]) {
+        NSError *error=nil;
+        if([_context save:&error]) {
+            if(DEBUG==1)
+                NSLog(@"_context saved changes to persistent store.");
+        }
+        else
+            NSLog(@"Failed to save _context : %@",error);
+    }else{
+        NSLog(@"Skipped _context save, there are no changes.");
+    }
+}
+
 @end
