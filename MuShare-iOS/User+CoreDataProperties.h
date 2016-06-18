@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  MuShare-iOS
 //
-//  Created by 李大爷的电脑 on 5/28/16.
+//  Created by 李大爷的电脑 on 6/18/16.
 //  Copyright © 2016 limeng. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -26,16 +26,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *screenName;
 @property (nullable, nonatomic, retain) NSNumber *sid;
 @property (nullable, nonatomic, retain) NSString *token;
-@property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *friends;
+@property (nullable, nonatomic, retain) NSSet<Friend *> *friends;
 
 @end
 
 @interface User (CoreDataGeneratedAccessors)
 
-- (void)addFriendsObject:(NSManagedObject *)value;
-- (void)removeFriendsObject:(NSManagedObject *)value;
-- (void)addFriends:(NSSet<NSManagedObject *> *)values;
-- (void)removeFriends:(NSSet<NSManagedObject *> *)values;
+- (void)addFriendsObject:(Friend *)value;
+- (void)removeFriendsObject:(Friend *)value;
+- (void)addFriends:(NSSet<Friend *> *)values;
+- (void)removeFriends:(NSSet<Friend *> *)values;
 
 @end
 

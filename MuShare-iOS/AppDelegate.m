@@ -19,11 +19,15 @@
 @synthesize managedObjectContext = managedObjectContext;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     self.manager=[AFHTTPSessionManager manager];
     self.manager.responseSerializer=[[AFCompoundResponseSerializer alloc] init];
     self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [self.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [self setupContext];
     return YES;
 }
 
@@ -47,9 +51,11 @@
                             NSMigratePersistentStoresAutomaticallyOption: @YES,
                             NSInferMappingModelAutomaticallyOption: @YES
                             };
+    NSURL *storeURL = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
+    storeURL = [storeURL URLByAppendingPathComponent:@"store.sqlite"];
     [coordinator addPersistentStoreWithType:NSSQLiteStoreType
                               configuration:nil
-                                        URL:self.storeURL
+                                        URL:storeURL
                                     options:options
                                       error:&error];
     if(error) {
@@ -60,30 +66,5 @@
     managedObjectContext.persistentStoreCoordinator=coordinator;
     managedObjectContext.mergePolicy=NSMergeByPropertyObjectTrumpMergePolicy;
 }
-
-#pragma mark - Setters
-- (NSURL *)storeDirectoryURL {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    NSURL *directoryURL=[[NSFileManager defaultManager] URLForDirectory:NSApplicationSupportDirectory
-                                                               inDomain:NSUserDomainMask
-                                                      appropriateForURL:nil
-                                                                 create:YES
-                                                                  error:NULL];
-    directoryURL=[directoryURL URLByAppendingPathComponent:NSBundle.mainBundle.bundleIdentifier isDirectory:YES];
-    return directoryURL;
-    
-}
-
-- (NSURL *)storeURL {
-    if(DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
-    NSURL *storeURL=[self.storeDirectoryURL URLByAppendingPathComponent:@"store.sqlite"];
-    NSLog(@"Database file stores at %@", storeURL);
-    return storeURL;
-}
-
 
 @end

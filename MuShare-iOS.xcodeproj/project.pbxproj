@@ -14,7 +14,7 @@
 		E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539161CE6FA9800ECD499 /* FriendTableViewController.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
-		E488B12C1CDDC36F009CA5C4 /* Mushare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */; };
+		E488B12C1CDDC36F009CA5C4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */; };
 		E488B1321CDDC83E009CA5C4 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */; };
 		E488B1331CDDC83E009CA5C4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1311CDDC83E009CA5C4 /* User.m */; };
 		E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1351CDDCA7E009CA5C4 /* DaoTemplate.m */; };
@@ -69,7 +69,7 @@
 		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
 		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E488B1281CDDBD61009CA5C4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		E488B12B1CDDC36F009CA5C4 /* Mushare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mushare.xcdatamodel; sourceTree = "<group>"; };
+		E488B12B1CDDC36F009CA5C4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E488B12E1CDDC83E009CA5C4 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E488B1301CDDC83E009CA5C4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 				E488B12F1CDDC83E009CA5C4 /* User+CoreDataProperties.m */,
 				E488B1301CDDC83E009CA5C4 /* User.h */,
 				E488B1311CDDC83E009CA5C4 /* User.m */,
-				E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */,
+				E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -521,7 +521,7 @@
 				E488B1321CDDC83E009CA5C4 /* User+CoreDataProperties.m in Sources */,
 				E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */,
 				E4AC3E251CF9653A0052AC6F /* FriendRequestTableViewController.m in Sources */,
-				E488B12C1CDDC36F009CA5C4 /* Mushare.xcdatamodeld in Sources */,
+				E488B12C1CDDC36F009CA5C4 /* Model.xcdatamodeld in Sources */,
 				E4AC3E1E1CF961070052AC6F /* Friend+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,13 +781,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E488B12A1CDDC36F009CA5C4 /* Mushare.xcdatamodeld */ = {
+		E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E488B12B1CDDC36F009CA5C4 /* Mushare.xcdatamodel */,
+				E488B12B1CDDC36F009CA5C4 /* Model.xcdatamodel */,
 			);
-			currentVersion = E488B12B1CDDC36F009CA5C4 /* Mushare.xcdatamodel */;
-			path = Mushare.xcdatamodeld;
+			currentVersion = E488B12B1CDDC36F009CA5C4 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
