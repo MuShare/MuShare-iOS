@@ -23,6 +23,7 @@
 		E488ECD11CF9750100253CF2 /* SheetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */; };
 		E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488ECD31CF9751800253CF2 /* AddSheetViewController.m */; };
 		E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */; };
+		E4AB32991D3480BD0037B892 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AB32981D3480BD0037B892 /* AlertTool.m */; };
 		E4AC3E1E1CF961070052AC6F /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */; };
 		E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E1D1CF961070052AC6F /* Friend.m */; };
 		E4AC3E221CF961400052AC6F /* FriendDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E211CF961400052AC6F /* FriendDao.m */; };
@@ -86,6 +87,8 @@
 		E488ECD31CF9751800253CF2 /* AddSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSheetViewController.m; sourceTree = "<group>"; };
 		E495C17B1CF037CF0010D0CC /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
 		E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
+		E4AB32971D3480BD0037B892 /* AlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTool.h; sourceTree = "<group>"; };
+		E4AB32981D3480BD0037B892 /* AlertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertTool.m; sourceTree = "<group>"; };
 		E4AC3E1A1CF961070052AC6F /* Friend+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friend+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E4AC3E1C1CF961070052AC6F /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 			children = (
 				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
 				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
+				E4AB32971D3480BD0037B892 /* AlertTool.h */,
+				E4AB32981D3480BD0037B892 /* AlertTool.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 				E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */,
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
+				E4AB32991D3480BD0037B892 /* AlertTool.m in Sources */,
 				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
