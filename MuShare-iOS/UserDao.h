@@ -7,7 +7,6 @@
 //
 
 #import "DaoTemplate.h"
-#import "User.h"
 
 #define UserEntityName @"User"
 
@@ -25,12 +24,14 @@
                              andSid:(NSNumber *)sid;
 
 //通过email得到用户
--(User *)getByMail:(NSString *)mail;
+- (User *)getByMail:(NSString *)mail;
 
 //得到当前登录的用户
--(User *)getLoginedUser;
+- (User *)getLoginedUser;
 
 //设置用户在iOS客户端的登录状态
--(void)setUserLogin:(BOOL)login withUid:(NSManagedObjectID *)uid;
+- (void)setUserLogin:(BOOL)login withUid:(NSManagedObjectID *)uid;
+
+- (User *)getBySid:(NSNumber *)sid;
 
 @end

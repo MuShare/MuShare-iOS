@@ -56,7 +56,7 @@
                          withEntityName:UserEntityName];
 }
 
--(void)setUserLogin:(BOOL)login withUid:(NSManagedObjectID *)uid {
+- (void)setUserLogin:(BOOL)login withUid:(NSManagedObjectID *)uid {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
@@ -68,6 +68,14 @@
     User *user=(User *)[self.context existingObjectWithID:uid error:nil];
     user.login=[NSNumber numberWithBool:YES];
     [self saveContext];
+}
+
+- (User *)getBySid:(NSNumber *)sid {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
+    return (User *)[self getByPredicate:[NSPredicate predicateWithFormat:@"sid=%@", sid]
+                         withEntityName:UserEntityName];
 }
 
 @end

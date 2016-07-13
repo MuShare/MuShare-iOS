@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
+#import "User.h"
+#import "Friend.h"
+#import "Sheet.h"
 
 #define DAO_DEBUG 0
 
@@ -17,6 +20,7 @@
 @property (nonatomic,readonly) NSManagedObjectContext *context;
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context;
+
 - (void)saveContext;
 
 //通过谓词和实体名称查询一个托管对象

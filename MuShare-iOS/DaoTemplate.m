@@ -14,8 +14,8 @@
     if(DEBUG) {
         NSLog(@"Running %@ ''%@", self.class, NSStringFromSelector(_cmd));
     }
-    self=[super init];
-    _context=context;
+    self = [super init];
+    _context = context;
     return self;
 }
 

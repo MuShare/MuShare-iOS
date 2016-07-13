@@ -14,10 +14,12 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     }
-    self=[super init];
+    self = [super init];
     if(self) {
-        _context=[(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        _userDao=[[UserDao alloc] initWithManagedObjectContext:_context];
+        _context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        _userDao = [[UserDao alloc] initWithManagedObjectContext:_context];
+        _friendDao = [[FriendDao alloc] initWithManagedObjectContext:_context];
+        _sheetDao = [[SheetDao alloc] initWithManagedObjectContext:_context];
     }
     return self;
 }
@@ -30,12 +32,12 @@
 }
 
 - (void)saveContext{
-    if(DEBUG==1)
+    if(DEBUG)
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
     if ([_context hasChanges]) {
-        NSError *error=nil;
+        NSError *error = nil;
         if([_context save:&error]) {
-            if(DEBUG==1)
+            if(DEBUG)
                 NSLog(@"_context saved changes to persistent store.");
         }
         else

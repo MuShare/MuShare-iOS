@@ -7,8 +7,6 @@
 //
 
 #import "DaoTemplate.h"
-#import "User.h"
-#import "Friend.h"
 
 #define FriendEntityName @"Friend"
 

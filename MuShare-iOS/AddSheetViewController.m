@@ -8,6 +8,7 @@
 
 #import "AddSheetViewController.h"
 #import "InternetHelper.h"
+#import "DaoManager.h"
 
 @interface AddSheetViewController ()
 
@@ -16,6 +17,7 @@
 @implementation AddSheetViewController {
     NSString *privilege;
     AFHTTPSessionManager *manager;
+    DaoManager *dao;
 }
 
 - (void)viewDidLoad {
@@ -23,7 +25,8 @@
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     [super viewDidLoad];
-    manager=[InternetHelper getSessionManager:nil];
+    manager = [InternetHelper getSessionManager:nil];
+    dao = [[DaoManager alloc] init];
     privilege=@"public";
     [_privilegeSegmentedControl addTarget:self
                                    action:@selector(privilegeSelected:)
@@ -62,9 +65,13 @@
                     }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-              NSDictionary *response=[InternetHelper getResponse:responseObject];
-              if([[response valueForKey:@"status"] intValue]==200) {
-                  
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if([response status200]) {
+                  NSObject *object = [response getResponseBody];
+                  [dao.sheetDao savwWithName:[object valueForKey:@"name"]
+                                andPrivilege:[object valueForKey:@"privilege"]
+                                      andSid:[NSNumber numberWithInt:[[object valueForKey:@"id"] intValue]]
+                                     forUser:[dao.userDao getBySid:[NSNumber numberWithInt:[[object valueForKey:@"userId"] intValue]]]];
                   [self.navigationController popViewControllerAnimated:YES];
               }
           }

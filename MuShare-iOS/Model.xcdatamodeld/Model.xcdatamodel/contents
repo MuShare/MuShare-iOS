@@ -5,6 +5,12 @@
         <relationship name="friend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
+    <entity name="Sheet" representedClassName="Sheet" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privilege" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birth" optional="YES" attributeType="Date" syncable="YES"/>
@@ -20,7 +26,8 @@
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="friend" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-105" width="128" height="225"/>
         <element name="Friend" positionX="-63" positionY="-27" width="128" height="90"/>
+        <element name="User" positionX="-63" positionY="-105" width="128" height="225"/>
+        <element name="Sheet" positionX="-54" positionY="-9" width="128" height="105"/>
     </elements>
 </model>

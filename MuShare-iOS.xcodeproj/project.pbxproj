@@ -12,6 +12,10 @@
 		E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E455390F1CE6ECC900ECD499 /* MeTableViewController.m */; };
 		E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */; };
 		E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539161CE6FA9800ECD499 /* FriendTableViewController.m */; };
+		E4666B531D3600F400C90B6D /* Sheet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B501D3600F400C90B6D /* Sheet+CoreDataProperties.m */; };
+		E4666B541D3600F400C90B6D /* Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B521D3600F400C90B6D /* Sheet.m */; };
+		E4666B571D36017700C90B6D /* InternetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B561D36017700C90B6D /* InternetResponse.m */; };
+		E4666B5A1D3606C900C90B6D /* SheetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B591D3606C900C90B6D /* SheetDao.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
 		E488B12C1CDDC36F009CA5C4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */; };
@@ -66,6 +70,14 @@
 		E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendTableViewController.m; sourceTree = "<group>"; };
 		E45539151CE6FA9800ECD499 /* FriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewController.h; sourceTree = "<group>"; };
 		E45539161CE6FA9800ECD499 /* FriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewController.m; sourceTree = "<group>"; };
+		E4666B4F1D3600F400C90B6D /* Sheet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sheet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E4666B501D3600F400C90B6D /* Sheet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sheet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E4666B511D3600F400C90B6D /* Sheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sheet.h; sourceTree = "<group>"; };
+		E4666B521D3600F400C90B6D /* Sheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sheet.m; sourceTree = "<group>"; };
+		E4666B551D36017700C90B6D /* InternetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetResponse.h; sourceTree = "<group>"; };
+		E4666B561D36017700C90B6D /* InternetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetResponse.m; sourceTree = "<group>"; };
+		E4666B581D3606C900C90B6D /* SheetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetDao.h; sourceTree = "<group>"; };
+		E4666B591D3606C900C90B6D /* SheetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetDao.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
 		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
 		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -188,6 +200,10 @@
 		E488B12D1CDDC37C009CA5C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E4666B4F1D3600F400C90B6D /* Sheet+CoreDataProperties.h */,
+				E4666B501D3600F400C90B6D /* Sheet+CoreDataProperties.m */,
+				E4666B511D3600F400C90B6D /* Sheet.h */,
+				E4666B521D3600F400C90B6D /* Sheet.m */,
 				E4AC3E1A1CF961070052AC6F /* Friend+CoreDataProperties.h */,
 				E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */,
 				E4AC3E1C1CF961070052AC6F /* Friend.h */,
@@ -212,6 +228,8 @@
 				E488B1391CDDCB42009CA5C4 /* UserDao.m */,
 				E4AC3E201CF961400052AC6F /* FriendDao.h */,
 				E4AC3E211CF961400052AC6F /* FriendDao.m */,
+				E4666B581D3606C900C90B6D /* SheetDao.h */,
+				E4666B591D3606C900C90B6D /* SheetDao.m */,
 			);
 			name = Dao;
 			sourceTree = "<group>";
@@ -302,6 +320,8 @@
 			children = (
 				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
 				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
+				E4666B551D36017700C90B6D /* InternetResponse.h */,
+				E4666B561D36017700C90B6D /* InternetResponse.m */,
 				E4AB32971D3480BD0037B892 /* AlertTool.h */,
 				E4AB32981D3480BD0037B892 /* AlertTool.m */,
 			);
@@ -507,16 +527,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */,
+				E4666B531D3600F400C90B6D /* Sheet+CoreDataProperties.m in Sources */,
 				E488ECD11CF9750100253CF2 /* SheetsTableViewController.m in Sources */,
 				E4C1BC7C1CD49BA400AB3F9A /* RegisterViewController.m in Sources */,
 				E4AC3E221CF961400052AC6F /* FriendDao.m in Sources */,
+				E4666B5A1D3606C900C90B6D /* SheetDao.m in Sources */,
 				E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */,
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
 				E4AB32991D3480BD0037B892 /* AlertTool.m in Sources */,
 				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
+				E4666B541D3600F400C90B6D /* Sheet.m in Sources */,
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
+				E4666B571D36017700C90B6D /* InternetResponse.m in Sources */,
 				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
 				E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */,
 				E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */,
