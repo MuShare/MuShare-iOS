@@ -68,10 +68,10 @@
               InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
               if([response status200]) {
                   NSObject *object = [response getResponseBody];
-                  [dao.sheetDao savwWithName:[object valueForKey:@"name"]
-                                andPrivilege:[object valueForKey:@"privilege"]
-                                      andSid:[NSNumber numberWithInt:[[object valueForKey:@"id"] intValue]]
-                                     forUser:[dao.userDao getBySid:[NSNumber numberWithInt:[[object valueForKey:@"userId"] intValue]]]];
+                  [dao.sheetDao saveOrUpdateWithName:[object valueForKey:@"name"]
+                                        andPrivilege:[object valueForKey:@"privilege"]
+                                              andSid:[NSNumber numberWithInt:[[object valueForKey:@"id"] intValue]]
+                                             forUser:[dao.userDao getBySid:[NSNumber numberWithInt:[[object valueForKey:@"userId"] intValue]]]];
                   [self.navigationController popViewControllerAnimated:YES];
               }
           }

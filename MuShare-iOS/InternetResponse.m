@@ -33,7 +33,7 @@
     return [[self.data valueForKey:@"status"] intValue] == 200;
 }
 
-- (NSObject *)getResponseBody {
+- (id)getResponseBody {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }

@@ -19,5 +19,5 @@
 - (BOOL)status200;
 
 //response body
-- (NSObject *)getResponseBody;
+- (id)getResponseBody;
 @end

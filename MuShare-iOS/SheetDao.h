@@ -12,9 +12,13 @@
 
 @interface SheetDao : DaoTemplate
 
-- (NSManagedObjectID *)savwWithName:(NSString *)name
-                       andPrivilege:(NSString *)privilege
-                             andSid:(NSNumber *)sid
-                            forUser:(User *)user;
+- (NSManagedObjectID *)saveOrUpdateWithName:(NSString *)name
+                               andPrivilege:(NSString *)privilege
+                                     andSid:(NSNumber *)sid
+                                    forUser:(User *)user;
+
+- (Sheet *)getBySid:(NSNumber *)sid;
+
+- (NSArray *)findByUser:(User *)user;
 
 @end

@@ -18,85 +18,49 @@
     DaoManager *dao;
     AFHTTPSessionManager *manager;
     User *loginedUser;
+    NSMutableArray *sheets;
 }
 
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
     dao=[[DaoManager alloc] init];
     manager=[InternetHelper getSessionManager:nil];
     loginedUser=[dao.userDao getLoginedUser];
+    [self loadSheets];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    sheets = [NSMutableArray arrayWithArray:[dao.sheetDao findByUser:loginedUser]];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return sheets.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sheetIdentifier"
+                                                            forIndexPath:indexPath];
+    Sheet *sheet = [sheets objectAtIndex:indexPath.row];
+    UILabel *sheetNameLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *privilegeLabel = (UILabel *)[cell viewWithTag:2];
+    sheetNameLabel.text = sheet.name;
+    privilegeLabel.text = sheet.privilege;
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Service
 - (void) loadSheets {
@@ -107,10 +71,21 @@
       parameters:nil
         progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             
+             InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+             NSArray *objects = [response getResponseBody];
+             for(NSObject *object in objects) {
+                 [dao.sheetDao saveOrUpdateWithName:[object valueForKey:@"name"]
+                                       andPrivilege:[object valueForKey:@"privilege"]
+                                             andSid:[NSNumber numberWithInt:[[object valueForKey:@"id"] intValue]]
+                                            forUser:[dao.userDao getBySid:[NSNumber numberWithInt:[[object valueForKey:@"userId"] intValue]]]];
+             }
+             sheets = [NSMutableArray arrayWithArray:[dao.sheetDao findByUser:loginedUser]];
+             [self.tableView reloadData];
          }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             
+             if(DEBUG) {
+                 NSLog(@"Server Error: %@", error);
+             }
          }];
 }
 
