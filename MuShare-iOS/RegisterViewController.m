@@ -39,15 +39,9 @@
                     }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-              NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                       options:NSJSONReadingAllowFragments
-                                                                         error:nil];
-              if(DEBUG) {
-                  NSLog(@"Get response from server: %@", response);
-              }
-              if([[response valueForKey:@"status"] intValue]==200) {
-                  [self dismissViewControllerAnimated:YES
-                                           completion:nil];
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if([response status200]) {
+                  [self dismissViewControllerAnimated:YES completion:nil];
               } 
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -55,7 +49,6 @@
                   NSLog(@"Error: %@", error);
               }
           }];
-    
 }
 
 - (IBAction)login:(id)sender {

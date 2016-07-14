@@ -16,6 +16,7 @@
 		E4666B541D3600F400C90B6D /* Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B521D3600F400C90B6D /* Sheet.m */; };
 		E4666B571D36017700C90B6D /* InternetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B561D36017700C90B6D /* InternetResponse.m */; };
 		E4666B5A1D3606C900C90B6D /* SheetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B591D3606C900C90B6D /* SheetDao.m */; };
+		E4666B5D1D3636DD00C90B6D /* SheetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
 		E488B12C1CDDC36F009CA5C4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */; };
@@ -32,6 +33,9 @@
 		E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E1D1CF961070052AC6F /* Friend.m */; };
 		E4AC3E221CF961400052AC6F /* FriendDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E211CF961400052AC6F /* FriendDao.m */; };
 		E4AC3E251CF9653A0052AC6F /* FriendRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E241CF9653A0052AC6F /* FriendRequestTableViewController.m */; };
+		E4B130231D375521008FF103 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B130221D375521008FF103 /* NameViewController.m */; };
+		E4B130261D375BCE008FF103 /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B130251D375BCE008FF103 /* MyProfileTableViewController.m */; };
+		E4B130291D375D6C008FF103 /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B130281D375D6C008FF103 /* DateTool.m */; };
 		E4B86B901CC897D0005DDF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B8F1CC897D0005DDF25 /* main.m */; };
 		E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B921CC897D0005DDF25 /* AppDelegate.m */; };
 		E4B86B9C1CC897D0005DDF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9A1CC897D0005DDF25 /* Main.storyboard */; };
@@ -78,6 +82,8 @@
 		E4666B561D36017700C90B6D /* InternetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetResponse.m; sourceTree = "<group>"; };
 		E4666B581D3606C900C90B6D /* SheetDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetDao.h; sourceTree = "<group>"; };
 		E4666B591D3606C900C90B6D /* SheetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetDao.m; sourceTree = "<group>"; };
+		E4666B5B1D3636DD00C90B6D /* SheetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetTableViewController.h; sourceTree = "<group>"; };
+		E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetTableViewController.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
 		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
 		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -109,6 +115,12 @@
 		E4AC3E211CF961400052AC6F /* FriendDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDao.m; sourceTree = "<group>"; };
 		E4AC3E231CF9653A0052AC6F /* FriendRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestTableViewController.h; sourceTree = "<group>"; };
 		E4AC3E241CF9653A0052AC6F /* FriendRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestTableViewController.m; sourceTree = "<group>"; };
+		E4B130211D375521008FF103 /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
+		E4B130221D375521008FF103 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
+		E4B130241D375BCE008FF103 /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
+		E4B130251D375BCE008FF103 /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
+		E4B130271D375D6C008FF103 /* DateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTool.h; sourceTree = "<group>"; };
+		E4B130281D375D6C008FF103 /* DateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTool.m; sourceTree = "<group>"; };
 		E4B86B8B1CC897D0005DDF25 /* MuShare-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MuShare-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B86B8F1CC897D0005DDF25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4B86B911CC897D0005DDF25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -241,6 +253,8 @@
 				E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */,
 				E488ECD21CF9751800253CF2 /* AddSheetViewController.h */,
 				E488ECD31CF9751800253CF2 /* AddSheetViewController.m */,
+				E4666B5B1D3636DD00C90B6D /* SheetTableViewController.h */,
+				E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */,
 			);
 			name = Sheet;
 			sourceTree = "<group>";
@@ -318,6 +332,8 @@
 		E4C1BC6F1CD490E300AB3F9A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E4B130271D375D6C008FF103 /* DateTool.h */,
+				E4B130281D375D6C008FF103 /* DateTool.m */,
 				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
 				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
 				E4666B551D36017700C90B6D /* InternetResponse.h */,
@@ -337,6 +353,10 @@
 				E488B1281CDDBD61009CA5C4 /* LoginViewController.m */,
 				E455390E1CE6ECC900ECD499 /* MeTableViewController.h */,
 				E455390F1CE6ECC900ECD499 /* MeTableViewController.m */,
+				E4B130211D375521008FF103 /* NameViewController.h */,
+				E4B130221D375521008FF103 /* NameViewController.m */,
+				E4B130241D375BCE008FF103 /* MyProfileTableViewController.h */,
+				E4B130251D375BCE008FF103 /* MyProfileTableViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -537,8 +557,11 @@
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
 				E4AB32991D3480BD0037B892 /* AlertTool.m in Sources */,
 				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
+				E4B130261D375BCE008FF103 /* MyProfileTableViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
 				E4666B541D3600F400C90B6D /* Sheet.m in Sources */,
+				E4B130291D375D6C008FF103 /* DateTool.m in Sources */,
+				E4666B5D1D3636DD00C90B6D /* SheetTableViewController.m in Sources */,
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
 				E4666B571D36017700C90B6D /* InternetResponse.m in Sources */,
 				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
@@ -547,6 +570,7 @@
 				E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */,
 				E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */,
 				E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */,
+				E4B130231D375521008FF103 /* NameViewController.m in Sources */,
 				E4B86B901CC897D0005DDF25 /* main.m in Sources */,
 				E488B1321CDDC83E009CA5C4 /* User+CoreDataProperties.m in Sources */,
 				E488B1361CDDCA7E009CA5C4 /* DaoTemplate.m in Sources */,

@@ -19,6 +19,7 @@
     AFHTTPSessionManager *manager;
     User *loginedUser;
     NSMutableArray *sheets;
+    Sheet *selectedSheet;
 }
 
 - (void)viewDidLoad {
@@ -60,6 +61,25 @@
     sheetNameLabel.text = sheet.name;
     privilegeLabel.text = sheet.privilege;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    selectedSheet = [sheets objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"sheetSegue" sender:self];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if([segue.identifier isEqualToString:@"sheetSegue"]) {
+        UIViewController *controller = [segue destinationViewController];
+        [controller setValue:selectedSheet forKey:@"sheet"];
+    }
 }
 
 #pragma mark - Service

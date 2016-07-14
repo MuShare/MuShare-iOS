@@ -18,10 +18,14 @@
 }
 
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
-    User *user=[dao.userDao getLoginedUser];
-    _nameLabel.text=user.name;
-    _mailLabel.text=user.mail;
+    dao = [[DaoManager alloc] init];
+    User *user = [dao.userDao getLoginedUser];
+    _nameLabel.text = user.name;
+    _mailLabel.text = user.mail;
 }
 
 @end
