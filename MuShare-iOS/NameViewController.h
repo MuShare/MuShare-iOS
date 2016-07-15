@@ -10,4 +10,8 @@
 
 @interface NameViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+
+- (IBAction)saveName:(id)sender;
+
 @end

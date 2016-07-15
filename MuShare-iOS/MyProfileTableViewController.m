@@ -25,6 +25,7 @@
     }
     dao = [[DaoManager alloc] init];
     loginedUser = [dao.userDao getLoginedUser];
+    
     _nameLabel.text = loginedUser.name;
     _phoneLabel.text = loginedUser.phone;
     _genderLabel.text = loginedUser.gender == 0? @"Male": @"Female";

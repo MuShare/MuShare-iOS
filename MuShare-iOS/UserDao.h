@@ -12,16 +12,7 @@
 
 @interface UserDao : DaoTemplate
 
-- (NSManagedObjectID *)saveWithMail:(NSString *)mail
-                       andTelephone:(NSString *)telephone
-                            andName:(NSString *)name
-                      andScreenName:(NSString *)screenName
-                          andGender:(NSNumber *)gender
-                        andDescribe:(NSString *)describe
-                           andBirth:(NSDate *)birth
-                          andAvatar:(NSString *)avatar
-                           andToken:(NSString *)token
-                             andSid:(NSNumber *)sid;
+- (NSManagedObjectID *)saveOrUpdateWithJSONObject:(NSObject *)object;
 
 //通过email得到用户
 - (User *)getByMail:(NSString *)mail;

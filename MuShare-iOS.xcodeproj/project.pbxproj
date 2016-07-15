@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E2F7376A4084047D6462A39 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DABF2F1FD61703DF6AA0F84 /* Pods.framework */; };
+		E429BCB61D38BD0300A4FAC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E429BCB51D38BD0300A4FAC0 /* Assets.xcassets */; };
 		E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E446CFBE1CE1C5CF007FD645 /* MainViewController.m */; };
 		E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E455390F1CE6ECC900ECD499 /* MeTableViewController.m */; };
 		E45539141CE6EFA700ECD499 /* AddFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45539131CE6EFA700ECD499 /* AddFriendTableViewController.m */; };
@@ -39,7 +40,6 @@
 		E4B86B901CC897D0005DDF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B8F1CC897D0005DDF25 /* main.m */; };
 		E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86B921CC897D0005DDF25 /* AppDelegate.m */; };
 		E4B86B9C1CC897D0005DDF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9A1CC897D0005DDF25 /* Main.storyboard */; };
-		E4B86B9E1CC897D0005DDF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9D1CC897D0005DDF25 /* Assets.xcassets */; };
 		E4B86BA11CC897D0005DDF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B86B9F1CC897D0005DDF25 /* LaunchScreen.storyboard */; };
 		E4B86BAC1CC897D0005DDF25 /* MuShare_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86BAB1CC897D0005DDF25 /* MuShare_iOSTests.m */; };
 		E4B86BB71CC897D0005DDF25 /* MuShare_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86BB61CC897D0005DDF25 /* MuShare_iOSUITests.m */; };
@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		0DABF2F1FD61703DF6AA0F84 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E429BCB51D38BD0300A4FAC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E446CFBD1CE1C5CF007FD645 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E446CFBE1CE1C5CF007FD645 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E455390E1CE6ECC900ECD499 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		E4B86B911CC897D0005DDF25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4B86B921CC897D0005DDF25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E4B86B9B1CC897D0005DDF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E4B86B9D1CC897D0005DDF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B86BA01CC897D0005DDF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4B86BA21CC897D0005DDF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B86BA71CC897D0005DDF25 /* MuShare-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MuShare-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,7 +294,7 @@
 				E4B86B911CC897D0005DDF25 /* AppDelegate.h */,
 				E4B86B921CC897D0005DDF25 /* AppDelegate.m */,
 				E4B86B9A1CC897D0005DDF25 /* Main.storyboard */,
-				E4B86B9D1CC897D0005DDF25 /* Assets.xcassets */,
+				E429BCB51D38BD0300A4FAC0 /* Assets.xcassets */,
 				E4B86B9F1CC897D0005DDF25 /* LaunchScreen.storyboard */,
 				E4B86BA21CC897D0005DDF25 /* Info.plist */,
 				E4B86B8E1CC897D0005DDF25 /* Supporting Files */,
@@ -471,8 +471,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B86BA11CC897D0005DDF25 /* LaunchScreen.storyboard in Resources */,
-				E4B86B9E1CC897D0005DDF25 /* Assets.xcassets in Resources */,
 				E4B86BC51CC89BF8005DDF25 /* login-bg.jpg in Resources */,
+				E429BCB61D38BD0300A4FAC0 /* Assets.xcassets in Resources */,
 				E4B86B9C1CC897D0005DDF25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,7 +719,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA5EC9F7DD476308D303B5C2 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MuShare-iOS/Info.plist";
@@ -735,7 +734,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC9D01923BC1E766110F0C4A /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MuShare-iOS/Info.plist";

@@ -7,31 +7,42 @@
 //
 
 #import "NameViewController.h"
+#import "DaoManager.h"
+#import "AlertTool.h"
 
 @interface NameViewController ()
 
 @end
 
-@implementation NameViewController
+@implementation NameViewController {
+    DaoManager *dao;
+    User *loginedUser;
+}
 
 - (void)viewDidLoad {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    dao = [[DaoManager alloc] init];
+    loginedUser = [dao.userDao getLoginedUser];
+    _nameTextField.text = loginedUser.name;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Action
+- (IBAction)saveName:(id)sender {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if([_nameTextField.text isEqualToString:@""]) {
+        [AlertTool showAlertWithTitle:@"Warning"
+                           andContent:@"User name cannot be empty!"
+                     inViewController:self];
+        return;
+    }
+    loginedUser.name = _nameTextField.text;
+    [dao saveContext];
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -372,7 +372,7 @@
         <scene sceneID="zrX-Tv-BVL">
             <objects>
                 <navigationController id="VyB-eT-fMI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sheets" id="etd-tL-cC2"/>
+                    <tabBarItem key="tabBarItem" title="Sheets" image="tab_sheets" id="etd-tL-cC2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uVq-lj-vC8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -602,7 +602,7 @@
         <scene sceneID="qa8-se-7pT">
             <objects>
                 <navigationController id="m4r-M5-9RM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="ysU-i8-Mip"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="tab_friends" id="ysU-i8-Mip"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gFb-Jc-ssv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1017,8 +1017,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="srX-gu-EZ4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vAJ-GQ-ANY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vAJ-GQ-ANY">
+                            <connections>
+                                <action selector="saveName:" destination="qfC-Fa-9GA" id="T2C-UO-E4Z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="wah-OM-IrX" id="FEn-l8-Vkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6y8-Tl-DyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1139,7 +1146,7 @@
         <scene sceneID="F6p-ak-XPv">
             <objects>
                 <navigationController id="Bjf-a6-9Ui" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="Ex5-wC-t7b"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="tab_me" id="Ex5-wC-t7b"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhj-km-zzY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1250,4 +1257,9 @@
             <point key="canvasLocation" x="261" y="3604"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_friends" width="30" height="30"/>
+        <image name="tab_me" width="30" height="30"/>
+        <image name="tab_sheets" width="30" height="30"/>
+    </resources>
 </document>

@@ -10,31 +10,26 @@
 
 @implementation UserDao
 
-- (NSManagedObjectID *)saveWithMail:(NSString *)mail
-                       andTelephone:(NSString *)phone
-                            andName:(NSString *)name
-                      andScreenName:(NSString *)screenName
-                          andGender:(NSNumber *)gender
-                        andDescribe:(NSString *)describe
-                           andBirth:(NSDate *)birth
-                          andAvatar:(NSString *)avatar
-                           andToken:(NSString *)token
-                             andSid:(NSNumber *)sid {
+- (NSManagedObjectID *)saveOrUpdateWithJSONObject:(NSObject *)object {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    User *user=[NSEntityDescription insertNewObjectForEntityForName:UserEntityName
-                                             inManagedObjectContext:self.context];
-    user.mail=mail;
-    user.phone=phone;
-    user.screenName=screenName;
-    user.name=screenName;
-    user.gender=gender;
-    user.describe=describe;
-    user.birth=birth;
-    user.avatar=avatar;
-    user.token=token;
-    user.sid=sid;
+    User *user = [self getByMail:[object valueForKey:@"mail"]];
+    if(user == nil) {
+        user=[NSEntityDescription insertNewObjectForEntityForName:UserEntityName
+                                           inManagedObjectContext:self.context];
+    }
+    user.mail = [object valueForKey:@"mail"];
+    user.phone = [object valueForKey:@"phone"];
+    user.name = [object valueForKey:@"name"];
+    user.screenName = [object valueForKey:@"screenName"];
+    user.gender = [NSNumber numberWithInt:[[object valueForKey:@"gender"] intValue]];
+    user.describe = [object valueForKey:@"description"];
+    user.birth = nil;
+    user.avatar = [object valueForKey:@"avatar"];
+    user.token = [object valueForKey:@"token"];
+    user.sid = [NSNumber numberWithInt:[[object valueForKey:@"id"] intValue]];
+
     [self saveContext];
     return user.objectID;
 }

@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "AppDelegate.h"
 #import "DaoManager.h"
 #import "InternetHelper.h"
 
@@ -45,49 +44,19 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    NSMutableDictionary *parameters=[[NSMutableDictionary alloc] init];
-    [parameters setValue:_emailTextField.text forKey:@"mail"];
-    [parameters setValue:_passwordTextField.text forKey:@"password"];
-    
     [manager POST:[InternetHelper createUrl:@"api/user/account/login"]
-       parameters:parameters
+       parameters:@{
+                    @"mail": _emailTextField.text,
+                    @"password": _passwordTextField.text
+                    }
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-              
-              NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                       options:NSJSONReadingAllowFragments
-                                                                         error:nil];
-              if(DEBUG) {
-                  NSLog(@"Get Message from server: %@", response);
-              }
-              NSDictionary *body=[response valueForKey:@"body"];
-              User *user=(User *)[dao.userDao getByMail:[body valueForKey:@"mail"]];
-              if(user==nil) {
-                  NSManagedObjectID *uid=[dao.userDao saveWithMail:[body valueForKey:@"mail"]
-                                                      andTelephone:[body valueForKey:@"phone"]
-                                                           andName:[body valueForKey:@"name"]
-                                                     andScreenName:[body valueForKey:@"screenName"]
-                                                         andGender:[NSNumber numberWithInt:[[body valueForKey:@"gender"] intValue]]
-                                                       andDescribe:[body valueForKey:@"description"]
-                                                          andBirth:nil
-                                                         andAvatar:[body valueForKey:@"avatar"]
-                                                          andToken:[body valueForKey:@"token"]
-                                                            andSid:[NSNumber numberWithInt:[[body valueForKey:@"id"] intValue]]];
+              InternetResponse *response = [[InternetResponse alloc] initWithResponseObject:responseObject];
+              if([response status200]) {
+                  NSManagedObjectID *uid = [dao.userDao saveOrUpdateWithJSONObject:[response getResponseBody]];
                   [dao.userDao setUserLogin:YES withUid:uid];
-                  [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
-              } else {
-                  user.mail=[body valueForKey:@"mail"];
-                  user.phone=[body valueForKey:@"phone"];
-                  user.name=[body valueForKey:@"name"];
-                  user.screenName=[body valueForKey:@"screenName"];
-                  user.gender=[NSNumber numberWithInt:[[body valueForKey:@"gender"] intValue]];
-                  user.describe=[body valueForKey:@"description"];
-                  user.birth=nil;
-                  user.avatar=[body valueForKey:@"avatar"];
-                  user.token=[body valueForKey:@"token"];
-                  [dao saveContext];
-                  [dao.userDao setUserLogin:YES withUid:user.objectID];
               }
+              [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               if(DEBUG) {
