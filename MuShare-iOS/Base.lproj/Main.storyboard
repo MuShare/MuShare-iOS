@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NaT-19-hCR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -975,7 +976,7 @@
         <!--Profile Photo-->
         <scene sceneID="57g-b4-Rfq">
             <objects>
-                <viewController id="9fM-Ye-mYy" sceneMemberID="viewController">
+                <viewController id="9fM-Ye-mYy" customClass="ProfilePhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sYV-Z5-dF2"/>
                         <viewControllerLayoutGuide type="bottom" id="eG4-sB-8Qw"/>
@@ -983,9 +984,31 @@
                     <view key="view" contentMode="scaleToFill" id="qta-Hd-K02">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0P6-wp-nvR">
+                                <rect key="frame" x="0.0" y="124" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0P6-wp-nvR" secondAttribute="height" multiplier="1:1" id="QaC-Mo-tY5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0P6-wp-nvR" secondAttribute="trailing" constant="-20" id="Lf6-BM-9mL"/>
+                            <constraint firstItem="0P6-wp-nvR" firstAttribute="leading" secondItem="qta-Hd-K02" secondAttribute="leadingMargin" constant="-20" id="VaJ-aZ-Dmf"/>
+                            <constraint firstItem="0P6-wp-nvR" firstAttribute="centerY" secondItem="qta-Hd-K02" secondAttribute="centerY" id="nOs-5P-2V4"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile Photo" id="mDL-E0-uvW"/>
+                    <navigationItem key="navigationItem" title="Profile Photo" id="mDL-E0-uvW">
+                        <barButtonItem key="rightBarButtonItem" image="more" id="H1Y-Fj-pwb">
+                            <connections>
+                                <action selector="editProfilePhoto:" destination="9fM-Ye-mYy" id="Tlh-3I-s9L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profilePhotoImageView" destination="0P6-wp-nvR" id="3Nx-jc-TRJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vp-Vm-dMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1258,6 +1281,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="more" width="22" height="22"/>
         <image name="tab_friends" width="30" height="30"/>
         <image name="tab_me" width="30" height="30"/>
         <image name="tab_sheets" width="30" height="30"/>

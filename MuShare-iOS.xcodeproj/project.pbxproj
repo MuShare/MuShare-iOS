@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1E2F7376A4084047D6462A39 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DABF2F1FD61703DF6AA0F84 /* Pods.framework */; };
+		E420FB331D3A2102004B93DB /* ProfilePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E420FB321D3A2102004B93DB /* ProfilePhotoViewController.m */; };
+		E420FB351D3A2ED0004B93DB /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E420FB341D3A2ED0004B93DB /* libresolv.tbd */; };
+		E420FB371D3A2EDA004B93DB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E420FB361D3A2EDA004B93DB /* SystemConfiguration.framework */; };
 		E429BCB61D38BD0300A4FAC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E429BCB51D38BD0300A4FAC0 /* Assets.xcassets */; };
 		E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E446CFBE1CE1C5CF007FD645 /* MainViewController.m */; };
 		E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E455390F1CE6ECC900ECD499 /* MeTableViewController.m */; };
@@ -66,6 +69,10 @@
 
 /* Begin PBXFileReference section */
 		0DABF2F1FD61703DF6AA0F84 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E420FB311D3A2102004B93DB /* ProfilePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePhotoViewController.h; sourceTree = "<group>"; };
+		E420FB321D3A2102004B93DB /* ProfilePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePhotoViewController.m; sourceTree = "<group>"; };
+		E420FB341D3A2ED0004B93DB /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		E420FB361D3A2EDA004B93DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E429BCB51D38BD0300A4FAC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E446CFBD1CE1C5CF007FD645 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E446CFBE1CE1C5CF007FD645 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -147,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E420FB371D3A2EDA004B93DB /* SystemConfiguration.framework in Frameworks */,
+				E420FB351D3A2ED0004B93DB /* libresolv.tbd in Frameworks */,
 				1E2F7376A4084047D6462A39 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +180,8 @@
 		B7E7106E753604EC6B2B090E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E420FB361D3A2EDA004B93DB /* SystemConfiguration.framework */,
+				E420FB341D3A2ED0004B93DB /* libresolv.tbd */,
 				0DABF2F1FD61703DF6AA0F84 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -357,6 +368,8 @@
 				E4B130221D375521008FF103 /* NameViewController.m */,
 				E4B130241D375BCE008FF103 /* MyProfileTableViewController.h */,
 				E4B130251D375BCE008FF103 /* MyProfileTableViewController.m */,
+				E420FB311D3A2102004B93DB /* ProfilePhotoViewController.h */,
+				E420FB321D3A2102004B93DB /* ProfilePhotoViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -563,6 +576,7 @@
 				E4B130291D375D6C008FF103 /* DateTool.m in Sources */,
 				E4666B5D1D3636DD00C90B6D /* SheetTableViewController.m in Sources */,
 				E45539171CE6FA9800ECD499 /* FriendTableViewController.m in Sources */,
+				E420FB331D3A2102004B93DB /* ProfilePhotoViewController.m in Sources */,
 				E4666B571D36017700C90B6D /* InternetResponse.m in Sources */,
 				E45539101CE6ECC900ECD499 /* MeTableViewController.m in Sources */,
 				E4AC3E1F1CF961070052AC6F /* Friend.m in Sources */,
