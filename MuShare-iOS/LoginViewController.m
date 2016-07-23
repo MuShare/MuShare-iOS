@@ -20,16 +20,17 @@
 }
 
 - (void)viewDidLoad {
-    if(DEBUG==1)
+    if(DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
-    [super viewDidLoad];
-    manager=[InternetHelper getSessionManager: nil];
+    }
+    manager = [InternetHelper getSessionManager: nil];
     dao=[[DaoManager alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    if(DEBUG==1)
+    if(DEBUG) {
         NSLog(@"Running %@ '%@'",self.class,NSStringFromSelector(_cmd));
+    }
     [super viewDidAppear:animated];
     //已有用户登录直接跳转到首页
     User *user=[dao.userDao getLoginedUser];
