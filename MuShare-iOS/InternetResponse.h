@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface InternetResponse : NSObject
 
@@ -15,9 +16,15 @@
 //init with Internet response
 - (instancetype) initWithResponseObject:(id)responseObject;
 
+//Init with error
+- (instancetype)initWithError:(NSError *)error;
+
 //response status is 200
 - (BOOL)status200;
 
 //response body
 - (id)getResponseBody;
+
+//getErrorCode
+- (int)errorCode;
 @end

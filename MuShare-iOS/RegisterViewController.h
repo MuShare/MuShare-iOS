@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RegisterViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *telephoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

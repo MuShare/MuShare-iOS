@@ -21,6 +21,7 @@
 		E4666B571D36017700C90B6D /* InternetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B561D36017700C90B6D /* InternetResponse.m */; };
 		E4666B5A1D3606C900C90B6D /* SheetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B591D3606C900C90B6D /* SheetDao.m */; };
 		E4666B5D1D3636DD00C90B6D /* SheetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */; };
+		E46B5BC81D5AC02C00CE407F /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BC71D5AC02C00CE407F /* CommonTool.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
 		E488B12C1CDDC36F009CA5C4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */; };
@@ -92,6 +93,8 @@
 		E4666B591D3606C900C90B6D /* SheetDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetDao.m; sourceTree = "<group>"; };
 		E4666B5B1D3636DD00C90B6D /* SheetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetTableViewController.h; sourceTree = "<group>"; };
 		E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetTableViewController.m; sourceTree = "<group>"; };
+		E46B5BC61D5AC02C00CE407F /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
+		E46B5BC71D5AC02C00CE407F /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
 		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
 		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 			children = (
 				E4B130271D375D6C008FF103 /* DateTool.h */,
 				E4B130281D375D6C008FF103 /* DateTool.m */,
+				E46B5BC61D5AC02C00CE407F /* CommonTool.h */,
+				E46B5BC71D5AC02C00CE407F /* CommonTool.m */,
 				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
 				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
 				E4666B551D36017700C90B6D /* InternetResponse.h */,
@@ -444,7 +449,7 @@
 				TargetAttributes = {
 					E4B86B8A1CC897D0005DDF25 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5EE3Z46PC9;
+						DevelopmentTeam = 6ANM44X2CJ;
 					};
 					E4B86BA61CC897D0005DDF25 = {
 						CreatedOnToolsVersion = 7.3;
@@ -572,6 +577,7 @@
 				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
 				E4B130261D375BCE008FF103 /* MyProfileTableViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
+				E46B5BC81D5AC02C00CE407F /* CommonTool.m in Sources */,
 				E4666B541D3600F400C90B6D /* Sheet.m in Sources */,
 				E4B130291D375D6C008FF103 /* DateTool.m in Sources */,
 				E4666B5D1D3636DD00C90B6D /* SheetTableViewController.m in Sources */,

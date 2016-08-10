@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 - (IBAction)loginSubmit:(id)sender;
+- (IBAction)finishEdit:(id)sender;
 @end

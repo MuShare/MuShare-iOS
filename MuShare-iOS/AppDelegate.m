@@ -28,6 +28,8 @@
     [self.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [self setupContext];
+    
+    [self setRootViewControllerWithIdentifer:@"loginViewController"];
     return YES;
 }
 
@@ -35,6 +37,17 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+}
+
+#pragma mark - Service
+- (void)setRootViewControllerWithIdentifer:(NSString *)identifer {
+    if(DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:identifer];
+    [self.window makeKeyAndVisible];
 }
 
 #pragma mark - CoreDate Stack

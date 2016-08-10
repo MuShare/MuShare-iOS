@@ -30,6 +30,7 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    
     [manager POST:[InternetHelper createUrl:@"api/user/account/register"]
        parameters:@{
                     @"mail":_emailTextField.text,

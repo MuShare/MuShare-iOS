@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "DaoManager.h"
 #import "InternetHelper.h"
+#import "AlertTool.h"
+#import "CommonTool.h"
 
 @interface LoginViewController ()
 
@@ -42,8 +44,18 @@
 
 #pragma mark - Action
 - (IBAction)loginSubmit:(id)sender {
-    if(DEBUG) {
+    if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (![CommonTool isAvailableEmail:_emailTextField.text]) {
+        _emailTextField.highlighted = YES;
+        _passwordTextField.highlighted = NO;
+        return;
+    }
+    if ([_passwordTextField.text isEqualToString:@""]) {
+        _passwordTextField.highlighted = YES;
+        _emailTextField.highlighted = NO;
+        return;
     }
     [manager POST:[InternetHelper createUrl:@"api/user/account/login"]
        parameters:@{
@@ -60,11 +72,26 @@
               [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              if(DEBUG) {
-                  NSLog(@"Error: %@", error);
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+                
+                  default:
+                      if(DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:@"Email or password is wrong!"
+                                   inViewController:self];
+                      break;
               }
-
           }];
 
+}
+
+- (IBAction)finishEdit:(id)sender {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    [sender resignFirstResponder];
 }
 @end

@@ -32,7 +32,33 @@
     manager = [InternetHelper getSessionManager:nil];
 }
 
-#pragma mark - UITableViewDelegate
+
+
+#pragma mark - UITableViewDataSource
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    //Clear header view color
+    UIView *headerView = [[UIView alloc] init];
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    return 0.1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -47,7 +73,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userIdentifier"
                                                             forIndexPath:indexPath];
     NSObject *user = [users objectAtIndex:indexPath.row];
-    UIImageView *avatarImageView = (UIImageView *)[cell viewWithTag:0];
+    //UIImageView *avatarImageView = (UIImageView *)[cell viewWithTag:0];
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
     UILabel *emailLabel = (UILabel *)[cell viewWithTag:2];
     nameLabel.text = [user valueForKey:@"name"];
@@ -55,6 +81,7 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -66,24 +93,24 @@
     UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"Send Request"
                                                       style:UIAlertActionStyleDestructive
                                                     handler:^(UIAlertAction * _Nonnull action) {
-                                                        [manager POST:[InternetHelper createUrl:@"api/user/friend/request"]
-                                                           parameters:@{
-                                                                        @"friendId": [user valueForKey:@"id"]                                                                        }
-                                                             progress:nil
-                                                              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                                                  NSDictionary *response=[InternetHelper getResponse:responseObject];
-                                                                  if([[response valueForKey:@"status"] intValue]==200) {
-                                                                      [AlertTool showAlertWithTitle:@"Tip"
-                                                                                         andContent:[NSString stringWithFormat:@"Send a request to %@", [user valueForKey:@"name"]]
-                                                                                   inViewController:self];
-                                                                  }
-                                                              }
-                                                              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                                                  if(DEBUG) {
-                                                                      NSLog(@"Server Error: %@", error);
-                                                                  }
-                                                              }];
-                                                    }];
+        [manager POST:[InternetHelper createUrl:@"api/user/friend/request"]
+           parameters:@{
+                        @"friendId": [user valueForKey:@"id"]                                                                        }
+             progress:nil
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  NSDictionary *response=[InternetHelper getResponse:responseObject];
+                  if([[response valueForKey:@"status"] intValue]==200) {
+                      [AlertTool showAlertWithTitle:@"Tip"
+                                         andContent:[NSString stringWithFormat:@"Send a request to %@", [user valueForKey:@"name"]]
+                                   inViewController:self];
+                  }
+              }
+              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  if(DEBUG) {
+                      NSLog(@"Server Error: %@", error);
+                  }
+              }];
+    }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
@@ -97,9 +124,12 @@
     if(DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
+    [_friendIdTextField resignFirstResponder];
     if([_friendIdTextField.text isEqualToString:@""]) {
         //Alert friend name not empty.
-        
+        [AlertTool showAlertWithTitle:@"Tip"
+                           andContent:@"Friend name cannot be empty!"
+                     inViewController:self];
         return;
     }
     [manager GET:[InternetHelper createUrl:@"api/user/search/stranger"]
