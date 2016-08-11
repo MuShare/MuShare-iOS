@@ -47,7 +47,16 @@
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               if(DEBUG) {
-                  NSLog(@"Error: %@", error);
+                  NSLog(@"Server error: %@", error.localizedDescription);
+              }
+              InternetResponse *response = [[InternetResponse alloc] initWithError:error];
+              switch ([response errorCode]) {
+      
+                  default:
+                      if (DEBUG) {
+                          NSLog(@"Error code is %d", [response errorCode]);
+                      }
+                      break;
               }
           }];
 }

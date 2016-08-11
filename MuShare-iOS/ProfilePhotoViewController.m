@@ -120,13 +120,6 @@
     if (DEBUG) {
         NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
-    
-}
-
-- (void)uploadAvatar {
-    if (DEBUG) {
-        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-    }
     NSString *endpoint = @"http://oss-cn-qingdao.aliyuncs.com";
     credential =  [[OSSFederationCredentialProvider alloc] initWithFederationTokenGetter:^OSSFederationToken *{
         NSURL * url = [NSURL URLWithString:[InternetHelper createUrl:@"api/oss/sts/get"]];
@@ -180,22 +173,27 @@
     }];
     
     client = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
-    
-    
-    
-    
+}
+
+- (void)uploadAvatar {
+    if (DEBUG) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
     OSSPutObjectRequest * put = [OSSPutObjectRequest new];
     
     put.bucketName = @"mushare";
     put.objectKey = [NSString stringWithFormat:@"avatar-%@.jpg", loginedUser.sid];
     put.callbackParam = @{
                           @"callbackUrl": [InternetHelper createUrl:@"api/oss/operation/upload"],
-                          @"callbackBody": @"{'bucket': ${bucket}, 'object': ${object}}",
+                          @"callbackBody": @"{'bucket': ${bucket}, 'object': ${object}, 'uid'=${x:uid}}",
                           @"callbackBodyType": @"application/json"
                           };
     put.callbackVar = @{
-                        @"x:uid": loginedUser.sid
+                        @"x:uid": [NSString stringWithFormat:@"%@", loginedUser.sid]
                         };
+    put.objectMeta = @{
+                       @"x-oss-meta-token": loginedUser.token
+                       };
     
     put.uploadingData = UIImageJPEGRepresentation(_profilePhotoImageView.image, 1.0); // 直接上传NSData
     

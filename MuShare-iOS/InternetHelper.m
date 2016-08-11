@@ -17,8 +17,11 @@
          NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
     }
     AppDelegate *delegate=[[UIApplication sharedApplication] delegate];
-    if(token!=nil) {
+    if(token != nil) {
         [delegate.manager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        if (DEBUG) {
+            NSLog(@"Token is %@", token);
+        }
     }
     return delegate.manager;
 }

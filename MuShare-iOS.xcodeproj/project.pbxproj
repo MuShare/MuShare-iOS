@@ -22,6 +22,8 @@
 		E4666B5A1D3606C900C90B6D /* SheetDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B591D3606C900C90B6D /* SheetDao.m */; };
 		E4666B5D1D3636DD00C90B6D /* SheetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */; };
 		E46B5BC81D5AC02C00CE407F /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BC71D5AC02C00CE407F /* CommonTool.m */; };
+		E46B5BCB1D5C238A00CE407F /* AddSheetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BCA1D5C238A00CE407F /* AddSheetTableViewController.m */; };
+		E46B5BD11D5C64AE00CE407F /* AddAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B5BD01D5C64AE00CE407F /* AddAudioViewController.m */; };
 		E488B1261CDDB594009CA5C4 /* InternetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1251CDDB594009CA5C4 /* InternetHelper.m */; };
 		E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1281CDDBD61009CA5C4 /* LoginViewController.m */; };
 		E488B12C1CDDC36F009CA5C4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E488B12A1CDDC36F009CA5C4 /* Model.xcdatamodeld */; };
@@ -31,7 +33,6 @@
 		E488B13A1CDDCB42009CA5C4 /* UserDao.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B1391CDDCB42009CA5C4 /* UserDao.m */; };
 		E488B13D1CDDD02A009CA5C4 /* DaoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E488B13C1CDDD02A009CA5C4 /* DaoManager.m */; };
 		E488ECD11CF9750100253CF2 /* SheetsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */; };
-		E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E488ECD31CF9751800253CF2 /* AddSheetViewController.m */; };
 		E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */; };
 		E4AB32991D3480BD0037B892 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AB32981D3480BD0037B892 /* AlertTool.m */; };
 		E4AC3E1E1CF961070052AC6F /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC3E1B1CF961070052AC6F /* Friend+CoreDataProperties.m */; };
@@ -95,6 +96,10 @@
 		E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetTableViewController.m; sourceTree = "<group>"; };
 		E46B5BC61D5AC02C00CE407F /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		E46B5BC71D5AC02C00CE407F /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
+		E46B5BC91D5C238A00CE407F /* AddSheetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSheetTableViewController.h; sourceTree = "<group>"; };
+		E46B5BCA1D5C238A00CE407F /* AddSheetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSheetTableViewController.m; sourceTree = "<group>"; };
+		E46B5BCF1D5C64AE00CE407F /* AddAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAudioViewController.h; sourceTree = "<group>"; };
+		E46B5BD01D5C64AE00CE407F /* AddAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAudioViewController.m; sourceTree = "<group>"; };
 		E488B1241CDDB594009CA5C4 /* InternetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetHelper.h; sourceTree = "<group>"; };
 		E488B1251CDDB594009CA5C4 /* InternetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetHelper.m; sourceTree = "<group>"; };
 		E488B1271CDDBD61009CA5C4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -112,8 +117,6 @@
 		E488B13C1CDDD02A009CA5C4 /* DaoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoManager.m; sourceTree = "<group>"; };
 		E488ECCF1CF9750100253CF2 /* SheetsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetsTableViewController.h; sourceTree = "<group>"; };
 		E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetsTableViewController.m; sourceTree = "<group>"; };
-		E488ECD21CF9751800253CF2 /* AddSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSheetViewController.h; sourceTree = "<group>"; };
-		E488ECD31CF9751800253CF2 /* AddSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSheetViewController.m; sourceTree = "<group>"; };
 		E495C17B1CF037CF0010D0CC /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
 		E495C17C1CF037CF0010D0CC /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
 		E4AB32971D3480BD0037B892 /* AlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTool.h; sourceTree = "<group>"; };
@@ -263,10 +266,12 @@
 		E488ECCE1CF974EF00253CF2 /* Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				E46B5BCF1D5C64AE00CE407F /* AddAudioViewController.h */,
+				E46B5BD01D5C64AE00CE407F /* AddAudioViewController.m */,
+				E46B5BC91D5C238A00CE407F /* AddSheetTableViewController.h */,
+				E46B5BCA1D5C238A00CE407F /* AddSheetTableViewController.m */,
 				E488ECCF1CF9750100253CF2 /* SheetsTableViewController.h */,
 				E488ECD01CF9750100253CF2 /* SheetsTableViewController.m */,
-				E488ECD21CF9751800253CF2 /* AddSheetViewController.h */,
-				E488ECD31CF9751800253CF2 /* AddSheetViewController.m */,
 				E4666B5B1D3636DD00C90B6D /* SheetTableViewController.h */,
 				E4666B5C1D3636DD00C90B6D /* SheetTableViewController.m */,
 			);
@@ -304,7 +309,7 @@
 				E488B1371CDDCB28009CA5C4 /* Dao */,
 				E488B12D1CDDC37C009CA5C4 /* Model */,
 				E4C1BC6F1CD490E300AB3F9A /* Core */,
-				E4C1BC791CD49B7F00AB3F9A /* User */,
+				E4C1BC791CD49B7F00AB3F9A /* Me */,
 				E4B86B911CC897D0005DDF25 /* AppDelegate.h */,
 				E4B86B921CC897D0005DDF25 /* AppDelegate.m */,
 				E4B86B9A1CC897D0005DDF25 /* Main.storyboard */,
@@ -346,37 +351,37 @@
 		E4C1BC6F1CD490E300AB3F9A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E4B130271D375D6C008FF103 /* DateTool.h */,
-				E4B130281D375D6C008FF103 /* DateTool.m */,
+				E4AB32971D3480BD0037B892 /* AlertTool.h */,
+				E4AB32981D3480BD0037B892 /* AlertTool.m */,
 				E46B5BC61D5AC02C00CE407F /* CommonTool.h */,
 				E46B5BC71D5AC02C00CE407F /* CommonTool.m */,
+				E4B130271D375D6C008FF103 /* DateTool.h */,
+				E4B130281D375D6C008FF103 /* DateTool.m */,
 				E488B1241CDDB594009CA5C4 /* InternetHelper.h */,
 				E488B1251CDDB594009CA5C4 /* InternetHelper.m */,
 				E4666B551D36017700C90B6D /* InternetResponse.h */,
 				E4666B561D36017700C90B6D /* InternetResponse.m */,
-				E4AB32971D3480BD0037B892 /* AlertTool.h */,
-				E4AB32981D3480BD0037B892 /* AlertTool.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
 		};
-		E4C1BC791CD49B7F00AB3F9A /* User */ = {
+		E4C1BC791CD49B7F00AB3F9A /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				E4C1BC7A1CD49BA400AB3F9A /* RegisterViewController.h */,
-				E4C1BC7B1CD49BA400AB3F9A /* RegisterViewController.m */,
 				E488B1271CDDBD61009CA5C4 /* LoginViewController.h */,
 				E488B1281CDDBD61009CA5C4 /* LoginViewController.m */,
 				E455390E1CE6ECC900ECD499 /* MeTableViewController.h */,
 				E455390F1CE6ECC900ECD499 /* MeTableViewController.m */,
-				E4B130211D375521008FF103 /* NameViewController.h */,
-				E4B130221D375521008FF103 /* NameViewController.m */,
 				E4B130241D375BCE008FF103 /* MyProfileTableViewController.h */,
 				E4B130251D375BCE008FF103 /* MyProfileTableViewController.m */,
+				E4B130211D375521008FF103 /* NameViewController.h */,
+				E4B130221D375521008FF103 /* NameViewController.m */,
 				E420FB311D3A2102004B93DB /* ProfilePhotoViewController.h */,
 				E420FB321D3A2102004B93DB /* ProfilePhotoViewController.m */,
+				E4C1BC7A1CD49BA400AB3F9A /* RegisterViewController.h */,
+				E4C1BC7B1CD49BA400AB3F9A /* RegisterViewController.m */,
 			);
-			name = User;
+			name = Me;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,16 +570,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B86B931CC897D0005DDF25 /* AppDelegate.m in Sources */,
+				E46B5BD11D5C64AE00CE407F /* AddAudioViewController.m in Sources */,
 				E4666B531D3600F400C90B6D /* Sheet+CoreDataProperties.m in Sources */,
 				E488ECD11CF9750100253CF2 /* SheetsTableViewController.m in Sources */,
 				E4C1BC7C1CD49BA400AB3F9A /* RegisterViewController.m in Sources */,
 				E4AC3E221CF961400052AC6F /* FriendDao.m in Sources */,
 				E4666B5A1D3606C900C90B6D /* SheetDao.m in Sources */,
-				E488ECD41CF9751800253CF2 /* AddSheetViewController.m in Sources */,
 				E488B1331CDDC83E009CA5C4 /* User.m in Sources */,
 				E488B1291CDDBD61009CA5C4 /* LoginViewController.m in Sources */,
 				E4AB32991D3480BD0037B892 /* AlertTool.m in Sources */,
 				E495C17D1CF037CF0010D0CC /* FriendRequestViewController.m in Sources */,
+				E46B5BCB1D5C238A00CE407F /* AddSheetTableViewController.m in Sources */,
 				E4B130261D375BCE008FF103 /* MyProfileTableViewController.m in Sources */,
 				E446CFBF1CE1C5CF007FD645 /* MainViewController.m in Sources */,
 				E46B5BC81D5AC02C00CE407F /* CommonTool.m in Sources */,

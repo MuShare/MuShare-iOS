@@ -285,29 +285,29 @@
         <scene sceneID="1OJ-3Q-wSi">
             <objects>
                 <tableViewController id="jO1-CC-AS5" customClass="SheetsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uve-Ej-4O6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="uve-Ej-4O6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="sheetIdentifier" id="Dk9-1Q-DZQ">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dk9-1Q-DZQ" id="rm8-wL-0ha">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sheet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikD-fC-DOw">
-                                            <rect key="frame" x="14" y="11" width="199" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Privilege" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnU-fw-oVN">
-                                            <rect key="frame" x="221" y="11" width="66" height="21"/>
+                                            <rect key="frame" x="221" y="17" width="66" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sheet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikD-fC-DOw">
+                                            <rect key="frame" x="14" y="17" width="199" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -326,7 +326,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q3Z-mg-wme">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Tdn-0j-apq" kind="push" id="4Z4-Ly-dHz"/>
+                                <segue destination="8kj-Yg-owg" kind="push" id="HK2-fc-ojz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -346,7 +346,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="quj-ao-0he">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ssd-gH-LcC">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
@@ -365,6 +365,9 @@
                     <navigationItem key="navigationItem" title="Sheet" id="U1L-nh-1Sn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="E75-vP-TgS">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="1Dg-4g-IGU" kind="push" id="1hr-ZM-7mh"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -372,64 +375,179 @@
             </objects>
             <point key="canvasLocation" x="1227" y="1037"/>
         </scene>
-        <!--Add Sheet-->
-        <scene sceneID="WXI-3F-RZf">
+        <!--Add Audio-->
+        <scene sceneID="dKN-6L-IOb">
             <objects>
-                <viewController id="Tdn-0j-apq" customClass="AddSheetViewController" sceneMemberID="viewController">
+                <viewController id="1Dg-4g-IGU" customClass="AddAudioViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sAj-Ip-V5L"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Vc-Yk-33u"/>
+                        <viewControllerLayoutGuide type="top" id="Dui-s4-D2v"/>
+                        <viewControllerLayoutGuide type="bottom" id="RYS-Yn-o3p"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uP8-aJ-uzw">
+                    <view key="view" contentMode="scaleToFill" id="6Me-nU-Qca">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-5r-l9O">
-                                <rect key="frame" x="20" y="111" width="280" height="29"/>
-                                <segments>
-                                    <segment title="Public"/>
-                                    <segment title="Private"/>
-                                    <segment title="Friend"/>
-                                </segments>
-                                <color key="tintColor" red="0.1137254902" green="0.69019607839999997" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sheet Privilege" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9I-jU-Q8k">
-                                <rect key="frame" x="20" y="82" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sheet Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbZ-s0-LxJ">
-                                <rect key="frame" x="0.0" y="156" width="320" height="45"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68H-6O-yDw">
+                                <rect key="frame" x="0.0" y="82" width="320" height="56"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Audio Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwa-h1-W47">
+                                        <rect key="frame" x="58" y="0.0" width="239" height="55.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_audio_name" translatesAutoresizingMaskIntoConstraints="NO" id="2uY-Qf-g4D">
+                                        <rect key="frame" x="20" y="13" width="30" height="30"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_audio_cover" translatesAutoresizingMaskIntoConstraints="NO" id="oXx-kZ-3g6">
+                                <rect key="frame" x="20" y="159" width="280" height="280"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-Ux-Sgt">
+                                <rect key="frame" x="20" y="466" width="280" height="50"/>
+                                <state key="normal" title="Choose Audio Cover">
+                                    <color key="titleColor" red="0.1137254902" green="0.69019607839999997" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseAudioCover:" destination="1Dg-4g-IGU" eventType="touchUpInside" id="vOj-y6-eAe"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="bbZ-s0-LxJ" secondAttribute="trailing" constant="-20" id="Q7O-m8-XH2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2hg-5r-l9O" secondAttribute="trailing" id="X7E-eB-YZe"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2hg-5r-l9O" secondAttribute="leading" id="ZjB-Ry-r8n"/>
-                            <constraint firstItem="bbZ-s0-LxJ" firstAttribute="leading" secondItem="uP8-aJ-uzw" secondAttribute="leadingMargin" constant="-20" id="htT-7h-0Ob"/>
+                            <constraint firstItem="68H-6O-yDw" firstAttribute="leading" secondItem="6Me-nU-Qca" secondAttribute="leadingMargin" constant="-20" id="LD5-gP-yyX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="68H-6O-yDw" secondAttribute="trailing" constant="-20" id="frI-Xw-0I6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Sheet" id="t5S-el-RWQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NTG-XH-UGn">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <navigationItem key="navigationItem" title="Add Audio" id="HA7-Cw-Ltg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="RrC-kh-mhi">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="addSheet:" destination="Tdn-0j-apq" id="5pC-M1-Rwp"/>
+                                <action selector="saveAudio:" destination="1Dg-4g-IGU" id="n2a-RR-z5F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="privilegeSegmentedControl" destination="2hg-5r-l9O" id="Jaf-1U-4gy"/>
-                        <outlet property="sheetNameTextField" destination="bbZ-s0-LxJ" id="9eB-Lg-4eC"/>
+                        <outlet property="audioCoverImageView" destination="oXx-kZ-3g6" id="eJY-uA-49o"/>
+                        <outlet property="audioNameTextField" destination="bwa-h1-W47" id="17B-Ab-ftf"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tin-f2-jSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vod-Yl-PYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="334"/>
+            <point key="canvasLocation" x="1725" y="1037"/>
+        </scene>
+        <!--Add Sheet-->
+        <scene sceneID="rjC-7K-Mww">
+            <objects>
+                <tableViewController id="8kj-Yg-owg" customClass="AddSheetTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OZ2-Zv-XXM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="BAq-1w-QoI">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="publicPrivilegeIdentifer" rowHeight="56" id="Qe5-Du-yUi">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qe5-Du-yUi" id="amo-a3-CdD">
+                                            <rect key="frame" x="0.0" y="0.0" width="281" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-Td-18Z">
+                                                    <rect key="frame" x="15" y="17" width="47" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="privatePrivilegeIdentifer" rowHeight="56" id="pFK-x5-wiK">
+                                        <rect key="frame" x="0.0" y="120" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pFK-x5-wiK" id="DDs-ia-bjy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Private" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-sy-J7L">
+                                                    <rect key="frame" x="15" y="17" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="friendPrivilegeIdentifer" rowHeight="56" id="H9c-Aj-QoK">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H9c-Aj-QoK" id="UQi-bR-yO7">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okq-tt-aPG">
+                                                    <rect key="frame" x="15" y="17" width="57" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="ycH-Qu-Ozk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="56" id="Igv-uj-Ycc">
+                                        <rect key="frame" x="0.0" y="232" width="320" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Igv-uj-Ycc" id="df5-h1-p5g">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_sheet_name" translatesAutoresizingMaskIntoConstraints="NO" id="oy1-n0-79c">
+                                                    <rect key="frame" x="15" y="13" width="30" height="30"/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sheet Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ1-ib-CWm">
+                                                    <rect key="frame" x="63" y="-1" width="243" height="56.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PQ1-ib-CWm" firstAttribute="leading" secondItem="df5-h1-p5g" secondAttribute="leadingMargin" constant="55" id="GFW-Nq-GK2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PQ1-ib-CWm" secondAttribute="trailing" constant="6" id="UJ2-UL-7Zi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="8kj-Yg-owg" id="a7X-0d-dwN"/>
+                            <outlet property="delegate" destination="8kj-Yg-owg" id="D2O-ac-0Ws"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Sheet" id="egi-Z7-WlG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="s6f-3C-io5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addSheet:" destination="8kj-Yg-owg" id="xLl-rb-Nyt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="friendTableViewCell" destination="H9c-Aj-QoK" id="yxD-Im-q4T"/>
+                        <outlet property="privateTableViewCell" destination="pFK-x5-wiK" id="kpl-5m-RrH"/>
+                        <outlet property="publicTableViewCell" destination="Qe5-Du-yUi" id="EmQ-yu-orw"/>
+                        <outlet property="sheetNameTextField" destination="PQ1-ib-CWm" id="zma-sa-haf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S8b-83-nsy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="334"/>
         </scene>
         <!--Sheets-->
         <scene sceneID="zrX-Tv-BVL">
@@ -464,7 +582,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rwR-80-ZAy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Friend" id="xcB-PU-JuN">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -702,7 +820,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DJO-1l-KnH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="dm5-ou-coA">
                                 <cells>
@@ -737,16 +855,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="DlS-AG-Uxg">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="42" id="pRl-FJ-wNP">
-                                        <rect key="frame" x="0.0" y="144" width="320" height="42"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pRl-FJ-wNP" id="UCi-tk-lIA">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -1379,6 +1488,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_audio_cover" width="280" height="280"/>
+        <image name="add_audio_name" width="30" height="30"/>
+        <image name="add_sheet_name" width="30" height="30"/>
         <image name="login_password" width="30" height="30"/>
         <image name="login_password_error" width="30" height="30"/>
         <image name="login_password_hide" width="20" height="20"/>
